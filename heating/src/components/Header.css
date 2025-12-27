@@ -1,0 +1,287 @@
+.header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Top Bar */
+.top-bar {
+    background-color: var(--bg-topbar);
+    /* Now Navy/Dark */
+    color: white;
+    font-size: 0.8rem;
+    padding: 6px 0;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+.top-bar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.socials a {
+    color: rgba(255, 255, 255, 0.8);
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.socials a:hover {
+    color: white;
+}
+
+.top-right-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-info {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.icon-white {
+    color: var(--primary-red);
+    /* Pop of color in top bar */
+}
+
+.theme-toggle {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Main Nav */
+.main-nav {
+    background-color: var(--bg-header);
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.header-wrapper.scrolled .top-bar {
+    display: none;
+}
+
+.header-wrapper.scrolled .main-nav {
+    padding: 10px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-header-scrolled);
+}
+
+.nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.6rem;
+    letter-spacing: -0.5px;
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.text-red {
+    color: var(--primary-red);
+}
+
+.brand-sub {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: -2px;
+    font-weight: 600;
+}
+
+/* Desktop Menu */
+.desktop-menu {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.desktop-menu a,
+.nav-link {
+    font-weight: 600;
+    color: var(--text-main);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+    padding: 5px 0;
+    position: relative;
+}
+
+.desktop-menu a:hover,
+.nav-link:hover,
+.active-link {
+    color: var(--primary-red) !important;
+}
+
+/* Active Indicator */
+.active-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-red);
+    border-radius: 2px;
+}
+
+.dropdown-menu.show .active-link::after {
+    display: none;
+    /* No underline in dropdown */
+}
+
+/* Nav Actions */
+.nav-actions {
+    margin-left: 10px;
+}
+
+/* Dropdown styling */
+.dropdown-trigger {
+    position: relative;
+    height: 100%;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-card);
+    min-width: 220px;
+    border-radius: 8px;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: var(--text-main);
+    font-size: 0.9rem;
+}
+
+.dropdown-menu li a:hover {
+    background: var(--bg-section-alt);
+    color: var(--primary-red);
+}
+
+/* Mobile Toggle */
+.mobile-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-main);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: var(--bg-card);
+    color: var(--text-main);
+    z-index: 1001;
+    padding: 80px 30px;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu.open {
+    right: 0;
+}
+
+.mobile-links {
+    list-style: none;
+    padding: 0;
+}
+
+.mobile-links li {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.mobile-links a {
+    color: var(--text-main);
+    display: block;
+}
+
+.theme-toggle-mobile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--text-main);
+}
+
+@media (max-width: 992px) {
+
+    .desktop-menu,
+    .nav-actions,
+    .contact-info,
+    .socials {
+        display: none;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+
+    .top-right-group {
+        display: none;
+        /* Hide toggle on mobile topbar, show in menu */
+    }
+}
