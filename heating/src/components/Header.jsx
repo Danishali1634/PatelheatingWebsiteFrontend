@@ -67,7 +67,7 @@ const Header = () => {
                 <div className="container nav-inner">
                     <Link to="/" className="logo-link">
                         <div className="brand-logo">
-                            <img src={brandLogo} alt='image' />
+                            <img src={brandLogo} alt='Logo image' style={{ height: '70px' }} />
                         </div>
                     </Link>
 
@@ -81,12 +81,17 @@ const Header = () => {
                         >
                             <span className={`nav-link ${servicesDropdownOpen ? 'active-link' : ''}`}>Services <FaChevronDown size={10} /></span>
                             <ul className={`dropdown-menu ${servicesDropdownOpen ? 'show' : ''}`}>
-                                <li><NavLink to="/services/cooling">Cooling</NavLink></li>
-                                <li><NavLink to="/services/furnace">Furnace</NavLink></li>
+                                <li><NavLink to="/services/heating">Furnace</NavLink></li>
                                 <li><NavLink to="/services/heat-pump">Heat Pump</NavLink></li>
-                                <li><NavLink to="/services/water-heater">Water Heater</NavLink></li>
-                                <li><NavLink to="/services/air-handler">Air Handler</NavLink></li>
+                                <li><NavLink to="/services/cooling">Air Conditioner</NavLink></li>
                                 <li><NavLink to="/services/humidifier">Humidifier</NavLink></li>
+                                <li><NavLink to="/services/thermostat">Thermostat</NavLink></li>
+                                <li><NavLink to="/services/tankless-water-heater">Tankless Water Heater</NavLink></li>
+                                <li><NavLink to="/services/hot-water-tank">Hot Water Tank</NavLink></li>
+                                <li><NavLink to="/services/gas-line">Gas Line</NavLink></li>
+                                <li><NavLink to="/services/air-handler">Air Handler</NavLink></li>
+                                <li><NavLink to="/services/hrv">HRV (Heat Recovery)</NavLink></li>
+                                <li><NavLink to="/services/erv">ERV (Energy Recovery)</NavLink></li>
                             </ul>
                         </li>
                         <li><NavLink to="/blog" className={({ isActive }) => (isActive ? 'active-link' : '')}>Blog</NavLink></li>
@@ -108,8 +113,17 @@ const Header = () => {
                 <ul className="mobile-links">
                     <li onClick={toggleMobileMenu}><NavLink to="/" end>Home</NavLink></li>
                     <li className="mobile-dropdown-header">Services</li>
-                    <li onClick={toggleMobileMenu} className="sub-link"><Link to="/services/cooling">Cooling</Link></li>
-                    <li onClick={toggleMobileMenu} className="sub-link"><Link to="/services/furnace">Heating</Link></li>
+                    <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/heating">Furnace</NavLink></li>
+                    <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/heat-pump">Heat Pump</NavLink></li>
+                    <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/cooling">Air Conditioner</NavLink></li>
+                    <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/humidifier">Humidifier</NavLink></li>
+                    <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/thermostat">Thermostat</NavLink></li>
+                    <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/tankless-water-heater">Tankless Water Heater</NavLink></li>
+                    <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/hot-water-tank">Hot Water Tank</NavLink></li>
+                    <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/gas-line">Gas Line</NavLink></li>
+                    <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/air-handler">Air Handler</NavLink></li>
+                    <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/hrv">HRV</NavLink></li>
+                    <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/erv">ERV</NavLink></li>
                     <li onClick={toggleMobileMenu}><NavLink to="/blog">Blog</NavLink></li>
                     <li onClick={toggleMobileMenu}><NavLink to="/about-us">About</NavLink></li>
                     <li onClick={toggleMobileMenu}><NavLink to="/contact">Contact</NavLink></li>

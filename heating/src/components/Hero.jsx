@@ -99,10 +99,10 @@ const PremiumHero = () => {
         letterSpacing: '0.3em',
         textTransform: 'uppercase',
         marginBottom: '1.5rem',
-        color: '#DC2626',
+        color: '#ff7216',
         fontWeight: '700',
         animation: 'fadeInUp 1s ease-out 0.3s both',
-        textShadow: '0 2px 10px rgba(220, 38, 38, 0.5)'
+        textShadow: '0 2px 10px rgba(255, 114, 22, 0.5)'
     };
 
     const titleStyle = {
@@ -139,7 +139,7 @@ const PremiumHero = () => {
         fontSize: '1rem',
         fontWeight: '700',
         color: 'white',
-        background: 'linear-gradient(135deg, #DC2626 0%, #991B1B 100%)',
+        background: 'linear-gradient(135deg, #ff7216 0%, #e65100 100%)',
         border: 'none',
         borderRadius: '50px',
         cursor: 'pointer',
@@ -148,7 +148,7 @@ const PremiumHero = () => {
         alignItems: 'center',
         gap: '0.5rem',
         transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-        boxShadow: '0 10px 30px rgba(220, 38, 38, 0.4)',
+        boxShadow: '0 10px 30px rgba(255, 114, 22, 0.4)',
         position: 'relative',
         overflow: 'hidden',
         letterSpacing: '0.05em'
@@ -186,7 +186,7 @@ const PremiumHero = () => {
         width: active ? '3rem' : '0.75rem',
         height: '0.75rem',
         borderRadius: '50px',
-        background: active ? '#DC2626' : 'rgba(255, 255, 255, 0.5)',
+        background: active ? '#ff7216' : 'rgba(255, 255, 255, 0.5)',
         cursor: 'pointer',
         transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
         border: '2px solid rgba(255, 255, 255, 0.3)'
@@ -223,7 +223,7 @@ const PremiumHero = () => {
         }
         .hero-btn-primary:hover {
           transform: translateY(-3px);
-          box-shadow: 0 15px 40px rgba(220, 38, 38, 0.5);
+          box-shadow: 0 15px 40px rgba(255, 114, 22, 0.5);
         }
         .hero-btn-secondary:hover {
           background: rgba(255, 255, 255, 0.2);
@@ -231,25 +231,28 @@ const PremiumHero = () => {
           transform: translateY(-3px);
         }
         @media (max-width: 768px) {
+          .hero-container { height: 600px !important; } 
           .hero-title { font-size: 2.5rem !important; }
           .hero-description { font-size: 1rem !important; }
+          .hero-content-wrapper { padding: 0 1rem !important; }
+          .hero-btn-group { flex-direction: column; width: 100%; }
+          .hero-btn-primary, .hero-btn-secondary { width: 100%; justify-content: center; }
         }
       `}</style>
-
-            <div style={containerStyle}>
+            <div style={containerStyle} className="hero-container">
                 {slides.map((slide, index) => (
                     index === currentSlide && (
                         <div key={slide.id} style={slideStyle}>
                             <div style={{ ...backgroundStyle, backgroundImage: `url(${slide.image})` }}></div>
                             <div style={overlayStyle}></div>
 
-                            <div style={contentWrapperStyle}>
+                            <div style={contentWrapperStyle} className="hero-content-wrapper">
                                 <div style={contentStyle}>
                                     <div style={subtitleStyle}>PREMIUM HVAC SERVICES</div>
                                     <h1 className="hero-title" style={titleStyle}>{slide.title}</h1>
                                     <p className="hero-description" style={descriptionStyle}>{slide.subtitle}</p>
 
-                                    <div style={buttonGroupStyle}>
+                                    <div style={buttonGroupStyle} className="hero-btn-group">
                                         <Link to={slide.ctaLink} className="hero-btn-primary" style={primaryButtonStyle}>
                                             {slide.ctaText}
                                             <span>→</span>
@@ -277,7 +280,7 @@ const PremiumHero = () => {
 
                 <div style={scrollIndicatorStyle}>
                     <div style={{ color: 'white', opacity: 0.7, fontSize: '0.75rem', marginBottom: '0.5rem' }}>SCROLL</div>
-                    <div style={{ width: '2px', height: '40px', background: 'linear-gradient(to bottom, #DC2626, transparent)', margin: '0 auto' }}></div>
+                    <div style={{ width: '2px', height: '40px', background: 'linear-gradient(to bottom, #ff7216, transparent)', margin: '0 auto' }}></div>
                 </div>
             </div>
         </>

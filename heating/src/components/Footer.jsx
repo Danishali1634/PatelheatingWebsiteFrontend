@@ -47,15 +47,6 @@ const Footer = () => {
                             </li>
                         </ul>
                     </div>
-
-                    <div className="footer-col newsletter-col">
-                        <h3>Newsletter</h3>
-                        <p>Enter your Email get our updates and offers.</p>
-                        <div className="newsletter-form">
-                            <input type="email" placeholder="Your Email..." />
-                            <button className="btn btn-primary">Go</button>
-                        </div>
-                    </div>
                 </div>
 
                 <div className="footer-bottom">

@@ -1,0 +1,119 @@
+/* Furnace.css */
+
+.furnace-page {
+    font-family: 'Inter', sans-serif;
+    color: #0d0d0d;
+    background-color: #ffffff;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.furnace-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    margin: 80px auto;
+}
+
+.furnace-image img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 8px;
+    /* Optional: adds a slight modern touch */
+}
+
+.furnace-text h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.furnace-text p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.furnace-text ul {
+    padding-left: 20px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.furnace-types {
+    margin: 40px auto;
+}
+
+.furnace-types h2 {
+    font-size: 34px;
+    margin-bottom: 30px;
+}
+
+.types-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.cta-section {
+    background-color: #c4161c;
+    padding: 70px 20px;
+    margin-top: 80px;
+    border-radius: 8px;
+    /* Consistent with other rounded elements if any */
+}
+
+.cta-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.cta-text h2 {
+    font-size: 36px;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.cta-button {
+    background-color: #fff;
+    color: #c4161c;
+    border: none;
+    padding: 16px 36px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+    .furnace-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin: 40px auto;
+    }
+
+    .types-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .furnace-image {
+        text-align: center;
+    }
+}

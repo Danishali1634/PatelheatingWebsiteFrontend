@@ -11,7 +11,7 @@
 
 /* Top Bar */
 .top-bar {
-    background-color: var(--bg-topbar);
+    background-color: #ff7216;
     /* Now Navy/Dark */
     color: white;
     font-size: 0.8rem;
@@ -109,6 +109,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    height: 70px;
 }
 
 .text-red {
@@ -159,7 +160,7 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: var(--primary-red);
+    background-color: #ff7216;
     border-radius: 2px;
 }
 

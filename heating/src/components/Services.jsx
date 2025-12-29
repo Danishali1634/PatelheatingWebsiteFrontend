@@ -1,49 +1,85 @@
 import React from 'react';
-import { FaFire, FaSnowflake, FaWater, FaWifi, FaFan, FaTint, FaBurn } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { Flame, Snowflake, Droplets, Wifi, Wind, Zap, RefreshCw, Thermometer, ShieldCheck, Activity } from 'lucide-react';
 import './Services.css';
 
 const servicesData = [
     {
         id: 1,
-        title: 'Heating',
-        desc: 'Installation, repair, and maintenance for all furnace makes and models.',
-        icon: <FaFire />
+        title: 'Furnace',
+        desc: 'High-efficiency furnace installation and repair to keep you warm.',
+        icon: <Flame size={40} />,
+        path: '/services/heating'
     },
     {
         id: 2,
-        title: 'Cooling',
-        desc: 'Expert AC repair and installation to keep you cool during summer.',
-        icon: <FaSnowflake />
+        title: 'Air Conditioner',
+        desc: 'Expert AC solutions for superior cooling during hot summers.',
+        icon: <Snowflake size={40} />,
+        path: '/services/cooling'
     },
     {
         id: 3,
-        title: 'Water Heaters',
-        desc: 'Tankless & standard water heaters for endless hot water supply.',
-        icon: <FaWater />
+        title: 'Heat Pump',
+        desc: 'Versatile heating and cooling for year-round energy savings.',
+        icon: <Zap size={40} />,
+        path: '/services/heat-pump'
     },
     {
         id: 4,
-        title: 'Thermostats',
-        desc: 'Smart Wi-Fi thermostats for precision home climate control.',
-        icon: <FaWifi />
+        title: 'Tankless Water Heater',
+        desc: 'Endless hot water on demand with space-saving efficiency.',
+        icon: <Droplets size={40} />,
+        path: '/services/tankless-water-heater'
     },
     {
         id: 5,
-        title: 'Air Quality',
-        desc: 'HRV, ERV, and filtration systems for healthier indoor air.',
-        icon: <FaFan />
+        title: 'Hot Water Tank',
+        desc: 'Reliable hot water storage solutions for any household size.',
+        icon: <Thermometer size={40} />,
+        path: '/services/hot-water-tank'
     },
     {
         id: 6,
-        title: 'Humidifiers',
-        desc: 'Whole-home humidifiers to protect your health and furniture.',
-        icon: <FaTint />
+        title: 'Humidifier',
+        desc: 'Balance indoor humidity for better health and comfort.',
+        icon: <Wind size={40} />,
+        path: '/services/humidifier'
     },
     {
         id: 7,
-        title: 'Gas Lines',
-        desc: 'Safe and professional gas line installation for BBQs and appliances.',
-        icon: <FaBurn />
+        title: 'Thermostat',
+        desc: 'Smart climate control for convenience and energy reduction.',
+        icon: <Wifi size={40} />,
+        path: '/services/thermostat'
+    },
+    {
+        id: 8,
+        title: 'Gas Line',
+        desc: 'Certified gas line installation for appliances and BBQs.',
+        icon: <Flame size={40} />, // Reusing Flame or could use a different icon if available
+        path: '/services/gas-line'
+    },
+    {
+        id: 9,
+        title: 'Air Handler',
+        desc: 'Optimize air circulation and quality throughout your home.',
+        icon: <Activity size={40} />,
+        path: '/services/air-handler'
+    },
+    {
+        id: 10,
+        title: 'HRV System',
+        desc: 'Fresh air ventilation that retains your home’s heat.',
+        icon: <RefreshCw size={40} />,
+        path: '/services/hrv'
+    },
+    {
+        id: 11,
+        title: 'ERV System',
+        desc: 'Balanced ventilation with humidity control for all seasons.',
+        icon: <ShieldCheck size={40} />,
+        path: '/services/erv'
     }
 ];
 
@@ -59,16 +95,16 @@ const Services = () => {
                 <div className="services-grid">
                     {servicesData.map(service => (
                         <div key={service.id} className="service-card-reveal">
-                            <div className="card-inner">
-                                <div className="icon-wrapper">
+                            <Link to={service.path} className="card-inner" style={{ textDecoration: 'none', color: 'inherit', display: 'block', width: '100%', height: '100%' }}>
+                                <div className="icon-wrapper" style={{ color: '#ff7216' }}>
                                     {service.icon}
                                 </div>
                                 <h3>{service.title}</h3>
                                 <div className="reveal-content">
                                     <p>{service.desc}</p>
-                                    <span className="read-more">Learn More &rarr;</span>
+
                                 </div>
-                            </div>
+                            </Link>
                         </div>
                     ))}
                 </div>

@@ -7,11 +7,11 @@ const WhyChooseUs = () => {
         <section className="section-padding why-choose-section">
             <div className="container">
                 <div className="text-center mb-5">
-                    <h2>Why Homeowners Choose PATEL</h2>
+                    <h2 style={{ color: '#ff7216' }}>Why Homeowners Choose PATEL</h2>
                     <div className="divider-center bg-red"></div>
                 </div>
 
-                <div className="features-grid">
+                <div className="features-grid" style={{}}>
                     <div className="feature-card">
                         <FaClock className="feature-icon" />
                         <h3>Fast Service</h3>

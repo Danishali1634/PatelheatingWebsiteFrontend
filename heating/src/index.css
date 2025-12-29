@@ -2,9 +2,10 @@
 
 :root {
   /* Brand Colors */
-  --primary-red: #e31e24;
-  /* Red from Logo */
-  --primary-red-hover: #c41217;
+  --primary-red: #ff7216;
+  /* New Brand Orange */
+  --primary-red-hover: #e06313;
+  /* Darker Orange */
   --accent-gold: #d4af37;
   --navy-dark: #0a192f;
 
@@ -53,8 +54,8 @@
   /* Top Bar stays Red or goes Dark? Usually stays brand color or goes dark. 
      User wanted Red theme, so let's keep Top Bar Red even in Dark Mode for strong branding, 
      or maybe Dark Navy. Let's keep Red for now as it's the "Red Theme". */
-  --bg-topbar: #b91c1c;
-  /* Slightly darker red for dark mode */
+  --bg-topbar: #c2410c;
+  /* Slightly darker orange for dark mode */
 }
 
 * {
@@ -129,7 +130,7 @@ img {
 .btn-primary:hover {
   background-color: var(--primary-red-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(227, 30, 36, 0.4);
+  box-shadow: 0 4px 12px rgba(255, 114, 22, 0.4);
 }
 
 .btn-secondary {
