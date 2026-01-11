@@ -15,6 +15,10 @@ import Hrv from './components/Hrv';
 import Erv from './components/Erv';
 import Contact from './components/Contact';
 import AboutUs from './components/AboutUs';
+import Blogs from './components/Blogs';
+import BlogDetail from './components/BlogDetail';
+import Services from './components/Services';
+import Reviews from './components/Reviews';
 
 // Placeholder components for routes not yet implemented but linked in Header
 const Placeholder = ({ title }) => (
@@ -31,7 +35,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about-us" element={<AboutUs />} />
-          <Route path="services" element={<Placeholder title="Our Services" />} />
+          <Route path="services" element={<Services />} />
           <Route path="services/heating" element={<Furnace />} />
           <Route path="services/heat-pump" element={<HeatPump />} />
           <Route path="services/cooling" element={<Cooling />} />
@@ -44,6 +48,9 @@ function App() {
           <Route path="services/hrv" element={<Hrv />} />
           <Route path="services/erv" element={<Erv />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="reviews" element={<Reviews />} />
+          <Route path="blog" element={<Blogs />} />
+          <Route path="blog/:id" element={<BlogDetail />} />
           <Route path="*" element={<Placeholder title="404 Not Found" />} />
         </Route>
       </Routes>

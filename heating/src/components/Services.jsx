@@ -85,31 +85,34 @@ const servicesData = [
 
 const Services = () => {
     return (
-        <section className="section-padding bg-section-alt">
-            <div className="container">
-                <div className="text-center mb-5">
-                    <h2 className="section-title">Our Services</h2>
-                    <div className="divider-center bg-red"></div>
-                </div>
+        <>
+            <title>Our Services - Patel Heating & Air Conditioning</title>
+            <section className="section-padding bg-section-alt">
+                <div className="container">
+                    <div className="text-center mb-5">
+                        <h2 className="section-title" style={{ color: '#ff7216' }}>Our Services</h2>
+                        <div className="divider-center bg-red"></div>
+                    </div>
 
-                <div className="services-grid">
-                    {servicesData.map(service => (
-                        <div key={service.id} className="service-card-reveal">
-                            <Link to={service.path} className="card-inner" style={{ textDecoration: 'none', color: 'inherit', display: 'block', width: '100%', height: '100%' }}>
-                                <div className="icon-wrapper" style={{ color: '#ff7216' }}>
-                                    {service.icon}
-                                </div>
-                                <h3>{service.title}</h3>
-                                <div className="reveal-content">
-                                    <p>{service.desc}</p>
+                    <div className="services-grid">
+                        {servicesData.map(service => (
+                            <div key={service.id} className="service-card-reveal">
+                                <Link to={service.path} className="card-inner" style={{ textDecoration: 'none', color: 'inherit', display: 'block', width: '100%', height: '100%' }}>
+                                    <div className="icon-wrapper" style={{ color: '#ff7216' }}>
+                                        {service.icon}
+                                    </div>
+                                    <h3>{service.title}</h3>
+                                    <div className="reveal-content">
+                                        <p>{service.desc}</p>
 
-                                </div>
-                            </Link>
-                        </div>
-                    ))}
+                                    </div>
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </>
     );
 };
 

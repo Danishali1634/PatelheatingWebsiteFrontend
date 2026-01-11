@@ -31,10 +31,19 @@
 
   /* Spacing */
   --container-width: 1200px;
-  --header-height: 80px;
+  --header-height: 110px;
+  /* Base header height for desktop */
+  --header-height-mobile: 80px;
+  /* Smaller header height for mobile */
 
   /* Top Bar Specific */
   --bg-topbar: var(--primary-red);
+}
+
+@media (max-width: 992px) {
+  :root {
+    --header-height: var(--header-height-mobile);
+  }
 }
 
 [data-theme='dark'] {

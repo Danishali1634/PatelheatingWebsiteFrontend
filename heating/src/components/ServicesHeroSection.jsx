@@ -1,5 +1,6 @@
 import React from "react";
 import { Sparkles, ArrowRight, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const ServicesHeroSection = ({
     title,
@@ -137,65 +138,70 @@ export const ServicesHeroSection = ({
                         animation: "fadeInUp 1.4s ease-out"
                     }}
                 >
-                    <button
-                        style={{
-                            background: "#fff",
-                            color: backgroundColor,
-                            border: "none",
-                            padding: "16px 36px",
-                            borderRadius: 12,
-                            fontSize: 16,
-                            fontWeight: 700,
-                            cursor: "pointer",
-                            transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                            boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
-                            display: "inline-flex",
-                            alignItems: "center",
-                            gap: 10
-                        }}
-                        onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = "translateY(-3px) scale(1.02)";
-                            e.currentTarget.style.boxShadow = "0 15px 40px rgba(0,0,0,0.4)";
-                        }}
-                        onMouseLeave={(e) => {
-                            e.currentTarget.style.transform = "translateY(0) scale(1)";
-                            e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.3)";
-                        }}
-                    >
-                        Get a Free Quote
-                        <ArrowRight size={18} />
-                    </button>
+                    <Link to="/contact">
+                        <button
+                            style={{
+                                background: "#fff",
+                                color: backgroundColor,
+                                border: "none",
+                                padding: "16px 36px",
+                                borderRadius: 12,
+                                fontSize: 16,
+                                fontWeight: 700,
+                                cursor: "pointer",
+                                transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                                boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
+                                display: "inline-flex",
+                                alignItems: "center",
+                                gap: 10
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = "translateY(-3px) scale(1.02)";
+                                e.currentTarget.style.boxShadow = "0 15px 40px rgba(0,0,0,0.4)";
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = "translateY(0) scale(1)";
+                                e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.3)";
+                            }}
+                        >
+                            Get a Free Quote
+                            <ArrowRight size={18} />
+                        </button>
+                    </Link>
 
-                    <button
-                        style={{
-                            background: "rgba(255,255,255,0.1)",
-                            color: "#fff",
-                            border: "2px solid rgba(255,255,255,0.3)",
-                            padding: "14px 34px",
-                            borderRadius: 12,
-                            fontSize: 16,
-                            fontWeight: 700,
-                            cursor: "pointer",
-                            transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                            backdropFilter: "blur(10px)",
-                            display: "inline-flex",
-                            alignItems: "center",
-                            gap: 10
-                        }}
-                        onMouseEnter={(e) => {
-                            e.currentTarget.style.background = "rgba(255,255,255,0.2)";
-                            e.currentTarget.style.borderColor = "rgba(255,255,255,0.5)";
-                            e.currentTarget.style.transform = "translateY(-3px)";
-                        }}
-                        onMouseLeave={(e) => {
-                            e.currentTarget.style.background = "rgba(255,255,255,0.1)";
-                            e.currentTarget.style.borderColor = "rgba(255,255,255,0.3)";
-                            e.currentTarget.style.transform = "translateY(0)";
-                        }}
-                    >
-                        <Phone size={18} />
-                        Call Now
-                    </button>
+                    <a href="tel:+16479847874" style={{ textDecoration: 'none' }}>
+                        <button
+                            style={{
+                                background: "rgba(255,255,255,0.1)",
+                                color: "#fff",
+                                border: "2px solid rgba(255,255,255,0.3)",
+                                padding: "14px 34px",
+                                borderRadius: 12,
+                                fontSize: 16,
+                                fontWeight: 700,
+                                cursor: "pointer",
+                                transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                                backdropFilter: "blur(10px)",
+                                display: "inline-flex",
+                                alignItems: "center",
+                                gap: 10,
+                                width: '100%'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.background = "rgba(255,255,255,0.2)";
+                                e.currentTarget.style.borderColor = "rgba(255,255,255,0.5)";
+                                e.currentTarget.style.transform = "translateY(-3px)";
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.background = "rgba(255,255,255,0.1)";
+                                e.currentTarget.style.borderColor = "rgba(255,255,255,0.3)";
+                                e.currentTarget.style.transform = "translateY(0)";
+                            }}
+                        >
+                            <Phone size={18} />
+                            Call Now
+                        </button>
+                    </a>
                 </div>
 
                 {/* Trust indicator */}

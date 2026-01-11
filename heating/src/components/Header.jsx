@@ -4,6 +4,7 @@ import { FaFacebookF, FaInstagram, FaPhoneAlt, FaMapMarkerAlt, FaBars, FaTimes, 
 import './Header.css';
 // import brandLogo from '../../assets/brandLogo.png';
 import brandLogo from '../assets/brandLogo.png'
+import { AiOutlineCloseCircle } from "react-icons/ai"
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -79,6 +80,8 @@ const Header = () => {
                             onMouseEnter={() => setServicesDropdownOpen(true)}
                             onMouseLeave={() => setServicesDropdownOpen(false)}
                         >
+
+
                             <span className={`nav-link ${servicesDropdownOpen ? 'active-link' : ''}`}>Services <FaChevronDown size={10} /></span>
                             <ul className={`dropdown-menu ${servicesDropdownOpen ? 'show' : ''}`}>
                                 <li><NavLink to="/services/heating">Furnace</NavLink></li>
@@ -94,6 +97,7 @@ const Header = () => {
                                 <li><NavLink to="/services/erv">ERV (Energy Recovery)</NavLink></li>
                             </ul>
                         </li>
+                        <li><NavLink to="/reviews" className={({ isActive }) => (isActive ? 'active-link' : '')}>Reviews</NavLink></li>
                         <li><NavLink to="/blog" className={({ isActive }) => (isActive ? 'active-link' : '')}>Blog</NavLink></li>
                         <li><NavLink to="/about-us" className={({ isActive }) => (isActive ? 'active-link' : '')}>About</NavLink></li>
                     </ul>
@@ -111,25 +115,48 @@ const Header = () => {
             {/* Mobile Menu */}
             <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
                 <ul className="mobile-links">
-                    <li onClick={toggleMobileMenu}><NavLink to="/" end>Home</NavLink></li>
-                    <li className="mobile-dropdown-header">Services</li>
-                    <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/heating">Furnace</NavLink></li>
-                    <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/heat-pump">Heat Pump</NavLink></li>
-                    <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/cooling">Air Conditioner</NavLink></li>
-                    <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/humidifier">Humidifier</NavLink></li>
-                    <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/thermostat">Thermostat</NavLink></li>
-                    <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/tankless-water-heater">Tankless Water Heater</NavLink></li>
-                    <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/hot-water-tank">Hot Water Tank</NavLink></li>
-                    <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/gas-line">Gas Line</NavLink></li>
-                    <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/air-handler">Air Handler</NavLink></li>
-                    <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/hrv">HRV</NavLink></li>
-                    <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/erv">ERV</NavLink></li>
-                    <li onClick={toggleMobileMenu}><NavLink to="/blog">Blog</NavLink></li>
-                    <li onClick={toggleMobileMenu}><NavLink to="/about-us">About</NavLink></li>
-                    <li onClick={toggleMobileMenu}><NavLink to="/contact">Contact</NavLink></li>
+                    <div style={{ position: 'absolute', top: 10, right: 10 }} title='Close' onClick={toggleMobileMenu}><AiOutlineCloseCircle color='#ff7216' size={40} /></div>
+                    <span className='' />
                     <li className="theme-toggle-mobile" onClick={toggleTheme}>
                         {theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode'} {theme === 'light' ? <FaMoon /> : <FaSun />}
                     </li>
+                    <li onClick={toggleMobileMenu}><NavLink to="/" end>Home</NavLink></li>
+
+                    <li className="mobile-dropdown-header">Our Services</li>
+
+                    <div className="mobile-service-category">
+                        <span className="category-label">Heating & Cooling</span>
+                        <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/heating">Furnace</NavLink></li>
+                        <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/heat-pump">Heat Pump</NavLink></li>
+                        <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/cooling">Air Conditioner</NavLink></li>
+                        <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/air-handler">Air Handler</NavLink></li>
+                    </div>
+
+                    <div className="mobile-service-category">
+                        <span className="category-label">Water Solutions</span>
+                        <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/tankless-water-heater">Tankless Water Heater</NavLink></li>
+                        <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/hot-water-tank">Hot Water Tank</NavLink></li>
+                    </div>
+
+                    <div className="mobile-service-category">
+                        <span className="category-label">Air Quality</span>
+                        <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/humidifier">Humidifier</NavLink></li>
+                        <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/hrv">HRV (Heat Recovery)</NavLink></li>
+                        <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/erv">ERV (Energy Recovery)</NavLink></li>
+                    </div>
+
+                    <div className="mobile-service-category">
+                        <span className="category-label">Support & Other</span>
+                        <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/gas-line">Gas Line</NavLink></li>
+                        <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/thermostat">Thermostat</NavLink></li>
+                    </div>
+
+                    <div style={{ borderTop: '1px solid #eee', margin: '20px 0', width: '100%' }} />
+
+                    <li onClick={toggleMobileMenu}><NavLink to="/reviews">Reviews</NavLink></li>
+                    <li onClick={toggleMobileMenu}><NavLink to="/blog">Blog</NavLink></li>
+                    <li onClick={toggleMobileMenu}><NavLink to="/about-us">About Us</NavLink></li>
+                    <li onClick={toggleMobileMenu}><NavLink to="/contact">Contact</NavLink></li>
                 </ul>
             </div>
         </header>
