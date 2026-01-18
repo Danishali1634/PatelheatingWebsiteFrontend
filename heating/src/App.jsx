@@ -13,12 +13,15 @@ import GasLine from './components/GasLine';
 import AirHandler from './components/AirHandler';
 import Hrv from './components/Hrv';
 import Erv from './components/Erv';
+import CombiBoiler from './components/CombiBoiler';
 import Contact from './components/Contact';
 import AboutUs from './components/AboutUs';
 import Blogs from './components/Blogs';
 import BlogDetail from './components/BlogDetail';
 import Services from './components/Services';
 import Reviews from './components/Reviews';
+import ScrollToTop from './components/ScrollToTop';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 // Placeholder components for routes not yet implemented but linked in Header
 const Placeholder = ({ title }) => (
@@ -31,12 +34,15 @@ const Placeholder = ({ title }) => (
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
+      <ScrollToTopButton />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about-us" element={<AboutUs />} />
           <Route path="services" element={<Services />} />
           <Route path="services/heating" element={<Furnace />} />
+          <Route path="services/combi-boiler" element={<CombiBoiler />} />
           <Route path="services/heat-pump" element={<HeatPump />} />
           <Route path="services/cooling" element={<Cooling />} />
           <Route path="services/tankless-water-heater" element={<TanklessWaterHeater />} />

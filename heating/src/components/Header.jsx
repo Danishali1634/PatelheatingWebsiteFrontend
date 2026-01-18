@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import { FaFacebookF, FaInstagram, FaPhoneAlt, FaMapMarkerAlt, FaBars, FaTimes, FaChevronDown, FaMoon, FaSun } from 'react-icons/fa';
 import './Header.css';
 // import brandLogo from '../../assets/brandLogo.png';
@@ -11,6 +11,9 @@ const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
     const [theme, setTheme] = useState('light');
+    const location = useLocation();
+
+    const isServicesActive = location.pathname.startsWith('/services/');
 
     useEffect(() => {
         const handleScroll = () => {
@@ -37,22 +40,16 @@ const Header = () => {
             <div className="top-bar">
                 <div className="container top-bar-inner">
                     <div className="socials">
-                        <a href="https://www.facebook.com/Patel-Heating-and-Air-Conditioning-481166902281003/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                            <FaFacebookF />
-                        </a>
-                        <a href="https://www.instagram.com/patel_heating_air_conditioning/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                            <FaInstagram />
-                        </a>
                     </div>
                     <div className="top-right-group">
                         <div className="contact-info">
                             <div className="contact-item">
                                 <FaPhoneAlt className="icon-white" />
-                                <span>+1 (647) 984-7874</span>
+                                <span style={{ fontSize: 20 }}>+1 (647) 984-7874</span>
                             </div>
                             <div className="contact-item">
                                 <FaMapMarkerAlt className="icon-white" />
-                                <span>142 Thornbush Blvd, Brampton, ON</span>
+                                <span style={{ fontSize: 20 }}>142 Thornbush Blvd, Brampton, ON</span>
                             </div>
                         </div>
                         {/* Theme Toggle in Top Bar for access */}
@@ -82,17 +79,21 @@ const Header = () => {
                         >
 
 
-                            <span className={`nav-link ${servicesDropdownOpen ? 'active-link' : ''}`}>Services <FaChevronDown size={10} /></span>
+                            <span className={`nav-link ${servicesDropdownOpen || isServicesActive ? 'active-link' : ''}`}>Services <FaChevronDown size={10} /></span>
                             <ul className={`dropdown-menu ${servicesDropdownOpen ? 'show' : ''}`}>
+                                <div className="dropdown-section-header">Heating & Cooling</div>
                                 <li><NavLink to="/services/heating">Furnace</NavLink></li>
                                 <li><NavLink to="/services/heat-pump">Heat Pump</NavLink></li>
                                 <li><NavLink to="/services/cooling">Air Conditioner</NavLink></li>
-                                <li><NavLink to="/services/humidifier">Humidifier</NavLink></li>
-                                <li><NavLink to="/services/thermostat">Thermostat</NavLink></li>
+                                <li><NavLink to="/services/air-handler">Air Handler</NavLink></li>
+
+                                <div className="dropdown-section-header">Water Solutions</div>
+                                <li><NavLink to="/services/combi-boiler">Combi Boiler System</NavLink></li>
                                 <li><NavLink to="/services/tankless-water-heater">Tankless Water Heater</NavLink></li>
                                 <li><NavLink to="/services/hot-water-tank">Hot Water Tank</NavLink></li>
-                                <li><NavLink to="/services/gas-line">Gas Line</NavLink></li>
-                                <li><NavLink to="/services/air-handler">Air Handler</NavLink></li>
+
+                                <div className="dropdown-section-header">Air Quality</div>
+                                <li><NavLink to="/services/humidifier">Humidifier</NavLink></li>
                                 <li><NavLink to="/services/hrv">HRV (Heat Recovery)</NavLink></li>
                                 <li><NavLink to="/services/erv">ERV (Energy Recovery)</NavLink></li>
                             </ul>
@@ -106,8 +107,14 @@ const Header = () => {
                         <Link to="/contact" className="btn btn-primary nav-btn">Get a Quote</Link>
                     </div>
 
-                    <div className="mobile-toggle" onClick={toggleMobileMenu}>
-                        {mobileMenuOpen ? <FaTimes /> : <FaBars />}
+                    <div className="mobile-actions">
+                        <a href="tel:+16479847874" className="mobile-phone-link">
+                            <FaPhoneAlt />
+                            <span>(647) 984-7874</span>
+                        </a>
+                        <div className="mobile-toggle" onClick={toggleMobileMenu}>
+                            {mobileMenuOpen ? <FaTimes /> : <FaBars />}
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -134,6 +141,7 @@ const Header = () => {
 
                     <div className="mobile-service-category">
                         <span className="category-label">Water Solutions</span>
+                        <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/combi-boiler">Combi Boiler System</NavLink></li>
                         <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/tankless-water-heater">Tankless Water Heater</NavLink></li>
                         <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/hot-water-tank">Hot Water Tank</NavLink></li>
                     </div>
@@ -151,12 +159,13 @@ const Header = () => {
                         <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/thermostat">Thermostat</NavLink></li>
                     </div>
 
-                    <div style={{ borderTop: '1px solid #eee', margin: '20px 0', width: '100%' }} />
-
-                    <li onClick={toggleMobileMenu}><NavLink to="/reviews">Reviews</NavLink></li>
-                    <li onClick={toggleMobileMenu}><NavLink to="/blog">Blog</NavLink></li>
-                    <li onClick={toggleMobileMenu}><NavLink to="/about-us">About Us</NavLink></li>
-                    <li onClick={toggleMobileMenu}><NavLink to="/contact">Contact</NavLink></li>
+                    <div className="mobile-service-category" style={{ marginTop: '20px', borderTop: '1px solid #f1f5f9', paddingTop: '20px' }}>
+                        <span className="category-label">Quick Links</span>
+                        <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/reviews">Reviews</NavLink></li>
+                        <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/blog">Blog</NavLink></li>
+                        <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/about-us">About Us</NavLink></li>
+                        <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/contact">Contact</NavLink></li>
+                    </div>
                 </ul>
             </div>
         </header>

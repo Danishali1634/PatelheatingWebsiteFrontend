@@ -8,7 +8,7 @@ export const ServicesHeroSection = ({
     description,
     backgroundColor = "#0d0d0d"
 }) => {
-    const orange = "#ff7216";
+
 
     return (
         <div

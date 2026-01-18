@@ -7,7 +7,7 @@ const WhyChooseUs = () => {
         <section className="section-padding why-choose-section">
             <div className="container">
                 <div className="text-center mb-5">
-                    <h2 style={{ color: '#ff7216' }}>Why Homeowners Choose PATEL</h2>
+                    <h2 style={{ color: '#ff7216' }}>Why Homeowners Choose PATEL Heating and Air Conditioning</h2>
                     <div className="divider-center bg-red"></div>
                 </div>
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Calendar, User, ArrowLeft, Loader2, Facebook, Twitter, Link as LinkIcon } from "lucide-react";
+import { Calendar, User, ArrowLeft, Loader2, Facebook, Instagram } from "lucide-react";
 
 export default function BlogDetail() {
     const { id } = useParams();
@@ -17,14 +17,21 @@ export default function BlogDetail() {
         const fetchBlogDetail = async () => {
             setLoading(true);
             try {
+                // Fetching by slug instead of ID for cleaner links and compatibility with the Blogs component
                 const response = await fetch(
-                    `https://blog.patelheating.ca/wp-json/wp/v2/posts/${id}?_embed`
+                    `https://blog.patelheating.ca/wp-json/wp/v2/posts?slug=${id}&_embed`
                 );
 
                 if (!response.ok) throw new Error("Failed to fetch blog");
 
                 const data = await response.json();
-                setBlog(data);
+
+                // WP API returns an array when filtering by slug
+                if (data && data.length > 0) {
+                    setBlog(data[0]);
+                } else {
+                    setBlog(null);
+                }
 
                 window.scrollTo(0, 0);
             } catch (err) {
@@ -122,20 +129,32 @@ export default function BlogDetail() {
 
                 {/* Featured Image */}
                 <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 20px", marginBottom: 60 }}>
-                    <img
-                        src={
-                            blog._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
-                            "https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?w=1200"
-                        }
-                        alt={blog.title.rendered}
-                        style={{
-                            width: "100%",
-                            maxHeight: 500,
-                            objectFit: "cover",
-                            borderRadius: 24,
-                            boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
-                        }}
-                    />
+                    <div style={{
+                        borderRadius: 24,
+                        overflow: "hidden",
+                        background: "#f1f5f9",
+                        boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
+                        maxHeight: 600,
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center"
+                    }}>
+                        <img
+                            src={
+                                blog._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
+                                "https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?w=1200"
+                            }
+                            alt={blog.title.rendered}
+                            style={{
+                                width: "100%",
+                                height: "auto",
+                                maxHeight: "100%",
+                                objectFit: "cover",
+                                display: "block",
+                                padding: "20px"
+                            }}
+                        />
+                    </div>
                 </div>
 
                 {/* Content */}
@@ -163,7 +182,7 @@ export default function BlogDetail() {
                         }
                     `}</style>
 
-                    {/* Share */}
+                    {/* Social Media */}
                     <div
                         style={{
                             marginTop: 60,
@@ -173,34 +192,106 @@ export default function BlogDetail() {
                             display: "flex",
                             justifyContent: "space-between",
                             flexWrap: "wrap",
-                            gap: 20
+                            gap: 20,
+                            alignItems: "center"
                         }}
                     >
-                        <div style={{ fontWeight: 700, fontSize: 18 }}>Share this post:</div>
+                        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+                            <div style={{ fontWeight: 700, fontSize: 18 }}>Follow our latest updates:</div>
+                            <button
+                                onClick={() => navigate("/blog")}
+                                style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: 8,
+                                    background: "rgba(255, 114, 22, 0.1)",
+                                    border: `1px solid ${orange}30`,
+                                    color: orange,
+                                    fontWeight: 700,
+                                    cursor: "pointer",
+                                    padding: "10px 20px",
+                                    fontSize: 14,
+                                    borderRadius: 12,
+                                    width: "fit-content",
+                                    transition: "all 0.3s ease"
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.background = orange;
+                                    e.currentTarget.style.color = "#fff";
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.background = "rgba(255, 114, 22, 0.1)";
+                                    e.currentTarget.style.color = orange;
+                                }}
+                            >
+                                <ArrowLeft size={16} /> Back to Blog
+                            </button>
+                        </div>
 
-                        <div style={{ display: "flex", gap: 12 }}>
-                            {[Facebook, Twitter, LinkIcon].map((Icon, i) => (
-                                <button
+                        <div style={{ display: "flex", gap: 16 }}>
+                            {[
+                                { Icon: Facebook, url: "https://www.facebook.com/PatelHVAC/?ref=1" },
+                                { Icon: Instagram, url: "https://www.instagram.com/patel_heating_air_conditioning/" }
+                            ].map(({ Icon, url }, i) => (
+                                <a
                                     key={i}
+                                    href={url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     style={{
-                                        width: 44,
-                                        height: 44,
+                                        width: 48,
+                                        height: 48,
                                         borderRadius: "50%",
-                                        background: "#fff",
-                                        border: "1px solid #e5e7eb",
+                                        background: orange,
+                                        color: "#fff",
                                         display: "flex",
                                         alignItems: "center",
                                         justifyContent: "center",
-                                        cursor: "pointer"
+                                        cursor: "pointer",
+                                        boxShadow: "0 4px 12px rgba(255, 114, 22, 0.2)",
+                                        textDecoration: "none"
                                     }}
                                 >
-                                    <Icon size={20} />
-                                </button>
+                                    <Icon size={24} />
+                                </a>
                             ))}
                         </div>
                     </div>
                 </div>
             </div>
+            {/* Floating Go Back Button */}
+            <button
+                onClick={() => navigate("/blog")}
+                style={{
+                    position: "fixed",
+                    bottom: 40,
+                    left: 40,
+                    zIndex: 1000,
+                    width: 60,
+                    height: 60,
+                    borderRadius: "50%",
+                    background: orange,
+                    color: "#fff",
+                    border: "none",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    cursor: "pointer",
+                    boxShadow: "0 10px 25px rgba(255, 114, 22, 0.3)",
+                    transition: "all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)"
+                }}
+                onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "scale(1.1) rotate(-10deg)";
+                    e.currentTarget.style.boxShadow = "0 15px 35px rgba(255, 114, 22, 0.4)";
+                }}
+                onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "scale(1) rotate(0deg)";
+                    e.currentTarget.style.boxShadow = "0 10px 25px rgba(255, 114, 22, 0.3)";
+                }}
+                title="Go Back to Blog"
+            >
+                <ArrowLeft size={30} />
+            </button>
         </>
     );
 }

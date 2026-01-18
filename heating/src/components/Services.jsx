@@ -80,6 +80,13 @@ const servicesData = [
         desc: 'Balanced ventilation with humidity control for all seasons.',
         icon: <ShieldCheck size={40} />,
         path: '/services/erv'
+    },
+    {
+        id: 12,
+        title: 'Combi Boiler System',
+        desc: 'Efficient hybrid heating and hot water for small homes.',
+        icon: <Droplets size={40} />,
+        path: '/services/combi-boiler'
     }
 ];
 

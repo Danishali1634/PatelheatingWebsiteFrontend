@@ -15,10 +15,10 @@ export default function HeatPump() {
                     position: "relative", paddingTop: 40, paddingBottom: 60, overflow: "hidden",
                     background: "linear-gradient(to bottom, #fff7ed, #fff)"
                 }}>
-                    <div style={{ position: "absolute", top: -100, right: -100, width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, #fed7aa 0%, transparent 70%)", opacity: 0.5 }}></div>
-                    <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: 100, background: "linear-gradient(to top, #fff, transparent)", zIndex: 2 }}></div>
+                    <div style={{ position: "absolute", top: -100, right: -100, width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, #fed7aa 0%, transparent 70%)", opacity: 0.5, pointerEvents: "none" }}></div>
+                    <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: 100, background: "linear-gradient(to top, #fff, transparent)", zIndex: 2, pointerEvents: "none" }}></div>
 
-                    <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 20px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, alignItems: "center", position: "relative", zIndex: 1 }} className="heatpump-hero-grid">
+                    <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 20px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, alignItems: "center", position: "relative", zIndex: 5 }} className="heatpump-hero-grid">
                         <style>{`
                             @media (max-width: 968px) {
                                 .heatpump-hero-grid { grid-template-columns: 1fr !important; text-align: center; }
@@ -47,15 +47,38 @@ export default function HeatPump() {
                                 Heating in winter, cooling in summer. Heat pumps are the most efficient way to control your home's climate year-round.
                             </p>
                             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                                <Link to="/contact" style={{
-                                    textDecoration: "none", background: "#ff7216", color: "#fff",
-                                    padding: "18px 40px", borderRadius: 50, fontWeight: 700,
-                                    boxShadow: "0 10px 25px rgba(251, 146, 60, 0.3)",
-                                    display: "inline-flex", alignItems: "center", gap: 10,
-                                    transition: "all 0.2s",
-                                }}>
-                                    Learn About Rebates <ArrowRight size={20} />
+                                <Link
+                                    to="/contact"
+                                    className="rebate-btn"
+                                    style={{
+                                        textDecoration: "none",
+                                        background: "#ff7216",
+                                        color: "#fff",
+                                        padding: "18px 40px",
+                                        borderRadius: 50,
+                                        fontWeight: 700,
+                                        boxShadow: "0 10px 25px rgba(251, 146, 60, 0.3)",
+                                        display: "inline-flex",
+                                        alignItems: "center",
+                                        gap: 10,
+                                        transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                                        position: "relative",
+                                        zIndex: 10
+                                    }}
+                                >
+                                    <span style={{ pointerEvents: "none" }}>Learn About Rebates</span>
+                                    <ArrowRight size={20} style={{ pointerEvents: "none" }} />
                                 </Link>
+                                <style>{`
+                                    .rebate-btn:hover {
+                                        transform: translateY(-3px);
+                                        box-shadow: 0 15px 30px rgba(251, 146, 60, 0.4);
+                                        background: #ff8c42 !important;
+                                    }
+                                    .rebate-btn:active {
+                                        transform: translateY(-1px);
+                                    }
+                                `}</style>
                             </div>
                         </div>
 
@@ -89,111 +112,59 @@ export default function HeatPump() {
                     </div>
                 </div>
 
-                {/* Immersive Layout */}
-                <div style={{ padding: "60px 20px", background: "#fff" }}>
+                {/* Secondary Section */}
+                <div style={{ padding: "100px 20px", background: "#f8fafc" }}>
                     <div style={{
                         maxWidth: 1200, margin: "0 auto",
                         background: "#fff",
                         borderRadius: 32, overflow: "hidden",
-                        boxShadow: "0 20px 60px rgba(251, 146, 60, 0.1)",
+                        boxShadow: "0 30px 70px rgba(69, 26, 3, 0.08)",
                         border: '1px solid #ff7216',
                         display: "grid",
                         gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
+                        minHeight: "70vh"
                     }}>
-
                         {/* Content Side */}
-                        <div style={{ display: "flex", flexDirection: "column" }}>
-                            {/* Text Content Header */}
-                            <div style={{ padding: "60px 40px 40px", textAlign: "left" }}>
-                                <div style={{ color: "black", fontWeight: 700, letterSpacing: 1.2, marginBottom: 16, fontSize: 13, textTransform: "uppercase" }}>
-                                    Heat Pump Services & Installation
-                                </div>
-                                <h2 style={{ fontSize: "clamp(30px, 4vw, 36px)", fontWeight: 800, marginBottom: 16, lineHeight: 1.2, color: "#ff7216" }}>
-                                    Hybrid Heating • Maximum Efficiency • Eco-Friendly
-                                </h2>
-                                <p style={{ fontSize: 18, color: "#64748b", lineHeight: 1.7, maxWidth: 800 }}>
-                                    Stay warm and save energy with our advanced heat pump solutions. We offer Hyper Heat Pumps for extreme cold and Standard units for moderate climates.
-                                </p>
+                        <div style={{ padding: "80px 60px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                            <div style={{ color: "#ff7216", fontWeight: 700, letterSpacing: 2, marginBottom: 16, fontSize: 14, textTransform: "uppercase" }}>
+                                All-Season Efficiency
                             </div>
+                            <h2 style={{ fontSize: "clamp(32px, 5vw, 42px)", fontWeight: 900, marginBottom: 32, lineHeight: 1.1, color: "#451a03" }}>
+                                Hybrid Heating & <br /> Smart Cooling
+                            </h2>
+                            <p style={{ fontSize: 18, color: "#44403c", lineHeight: 1.7, marginBottom: 40, maxWidth: 500 }}>
+                                Heat pumps provide an all-in-one solution for year-round comfort. They are the most eco-friendly way to heat and cool your home.
+                            </p>
 
-                            {/* Content Grid */}
-                            <div style={{
-                                display: "grid",
-                                gap: "40px",
-                                padding: "0 40px 60px"
-                            }}>
-                                {/* Why Heat Pump */}
-                                <div>
-                                    <h4 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: "#ff7216", display: "flex", alignItems: "center", gap: 10 }}>
-                                        <span style={{ width: 8, height: 8, background: "#ff7216", borderRadius: "50%" }}></span>
-                                        Why Choose a Heat Pump?
-                                    </h4>
-                                    <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: 12 }}>
-                                        {[
-                                            "All-in-one heating and air conditioning unit",
-                                            "Significantly lower carbon footprint",
-                                            "Extremely quiet operation and precise control",
-                                            "Government rebates often available for upgrades"
-                                        ].map((item, i) => (
-                                            <li key={i} style={{ color: "#64748b", fontSize: 16, display: "flex", alignItems: "flex-start", gap: 10 }}>
-                                                <span style={{ color: "#ff7216", fontWeight: "bold" }}>•</span> {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                {/* Our Expertise */}
-                                <div>
-                                    <h4 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: "#ff7216", display: "flex", alignItems: "center", gap: 10 }}>
-                                        <span style={{ width: 8, height: 8, background: "#f97316", borderRadius: "50%" }}></span>
-                                        Our Expertise
-                                    </h4>
-                                    <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: 12 }}>
-                                        {[
-                                            "Hyper Heat (Efficient down to -30°C)",
-                                            "Standard Efficiency (Ideal for GTA climates)",
-                                            "Dual Fuel (Hybrid) system integration",
-                                            "Annual performance and maintenance checks"
-                                        ].map((item, i) => (
-                                            <li key={i} style={{ color: "#64748b", fontSize: 16, display: "flex", alignItems: "flex-start", gap: 10 }}>
-                                                <span style={{ color: "#ff7216", fontWeight: "bold" }}>•</span> {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                {/* Why Choose Us */}
-                                <div>
-                                    <h4 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: "#ff7216", display: "flex", alignItems: "center", gap: 10 }}>
-                                        <span style={{ width: 8, height: 8, background: "#fbbf24", borderRadius: "50%" }}></span>
-                                        Why Choose Us?
-                                    </h4>
-                                    <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: 12 }}>
-                                        {[
-                                            "Licensed and insured HVAC professionals",
-                                            "Detailed system sizing for your home",
-                                            "Transparent pricing and financing options",
-                                            "24/7 support for all your heating needs"
-                                        ].map((item, i) => (
-                                            <li key={i} style={{ color: "#64748b", fontSize: 16, display: "flex", alignItems: "flex-start", gap: 10 }}>
-                                                <span style={{ color: "#ff7216", fontWeight: "bold" }}>•</span> {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
+                            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 24 }}>
+                                {[
+                                    { title: "Dual Purpose", desc: "Efficient heating in winter and cooling in summer." },
+                                    { title: "Eco-Friendly", desc: "Significantly lower carbon footprint than gas furnaces." },
+                                    { title: "Whisper Quiet", desc: "Extremely low noise levels for peaceful indoor living." }
+                                ].map((item, i) => (
+                                    <li key={i} style={{ display: "flex", gap: 20, alignItems: "flex-start" }}>
+                                        <div style={{ width: 44, height: 44, borderRadius: 12, background: "rgba(255, 114, 22, 0.08)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                                            <Zap size={22} color="#ff7216" />
+                                        </div>
+                                        <div>
+                                            <h4 style={{ fontSize: 18, fontWeight: 700, color: "#451a03", marginBottom: 6 }}>{item.title}</h4>
+                                            <p style={{ color: "#64748b", margin: 0, fontSize: 15 }}>{item.desc}</p>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
 
                         {/* Image Side */}
-                        <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid rgba(255, 114, 22, 0.1)" }}>
-                            <div style={{ flex: 1, position: "relative", minHeight: 400 }}>
+                        <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
+                            <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
                                 <img
                                     src={heatpump}
-                                    alt="Heat Pump Unit"
+                                    alt="Modern Heat Pump"
                                     style={{
                                         width: "100%",
                                         height: "100%",
-                                        objectFit: "cover",
+                                        objectFit: "contain",
                                         display: "block"
                                     }}
                                 />
@@ -203,41 +174,29 @@ export default function HeatPump() {
                                     left: 0,
                                     right: 0,
                                     padding: "40px",
-                                    background: "linear-gradient(to top, rgba(69, 26, 3, 0.8), transparent)",
-                                    color: "#fff"
+                                    background: "linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent)",
+                                    color: "#ff7216"
                                 }}>
-                                    <h4 style={{ fontSize: 24, fontWeight: 700, marginBottom: 10 }}>Smart Efficiency</h4>
-                                    <p style={{ opacity: 0.9 }}>Transforming outside energy into ultimate indoor comfort for your family.</p>
+                                    <h4 style={{ fontSize: 28, fontWeight: 800, marginBottom: 12, color: "#ff7216" }}>Ultimate Control</h4>
+                                    <p style={{ opacity: 0.9, color: "#ff7216", fontWeight: 600, fontSize: 16 }}>Transforming energy into year-round comfort.</p>
                                 </div>
                             </div>
 
-                            {/* Product Detail Footer */}
-                            <div style={{
-                                background: "#f8fafc",
-                                padding: "30px 40px",
-                                borderTop: "1px solid #e2e8f0",
-                                display: "flex",
-                                flexDirection: "column",
-                                gap: 15
-                            }}>
+                            {/* Info Footer */}
+                            <div style={{ padding: "40px 60px", background: "#fff", borderTop: "1px solid #f1f5f9", display: "flex", flexDirection: "column", gap: 20 }}>
                                 <div>
-                                    <span style={{ fontSize: 13, textTransform: "uppercase", letterSpacing: 1, fontWeight: 700, color: "#ff7216" }}>Product Details</span>
-                                    <h3 style={{ fontSize: 22, fontWeight: 800, color: "#ff7216", margin: "5px 0 0" }}>Kepler Heat Pump</h3>
+                                    <span style={{ fontSize: 13, textTransform: "uppercase", letterSpacing: 1.5, fontWeight: 700, color: "#94a3b8" }}>Featured Model</span>
+                                    <h3 style={{ fontSize: 24, fontWeight: 800, color: "#ff7216", margin: "8px 0 0" }}>Mitsubishi Zuba</h3>
                                 </div>
                                 <div style={{
-                                    padding: "8px 20px",
-                                    background: "#fff",
-                                    border: "1px solid #e2e8f0",
-                                    borderRadius: 100,
-                                    fontWeight: 600,
-                                    color: "#ff7216",
-                                    width: "fit-content"
+                                    display: "inline-flex", alignItems: "center", gap: 12, padding: "12px 24px",
+                                    background: "#f8fafc", borderRadius: 100, border: "1px solid #e2e8f0"
                                 }}>
-                                    Energy Star Rated
+                                    <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#10b981" }}></div>
+                                    <span style={{ fontSize: 15, fontWeight: 700, color: "#475569" }}>Efficient down to -30°C</span>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 

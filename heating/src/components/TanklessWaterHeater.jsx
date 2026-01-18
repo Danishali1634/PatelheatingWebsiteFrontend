@@ -1,7 +1,8 @@
 import React from "react";
 import { Droplets, TrendingDown, Clock, ArrowRight, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
-import tankless from '../assets/tankless.png'
+// import tankless from '../assets/tankless.png'
+import tankless from '../assets/tenkless.png'
 
 
 export default function TanklessWaterHeater() {
@@ -12,7 +13,7 @@ export default function TanklessWaterHeater() {
 
                 {/* Custom Hero: Clean Water Theme */}
                 <div style={{
-                    position: "relative", paddingTop: 40, paddingBottom: 60, overflow: "hidden",
+                    position: "relative", paddingTop: 80, paddingBottom: 80, overflow: "hidden",
                     background: "linear-gradient(to bottom, #f0f9ff, #fff)"
                 }}>
                     <div style={{ position: "absolute", top: -100, right: -100, width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, #bae6fd 0%, transparent 70%)", opacity: 0.5 }}></div>
@@ -21,7 +22,7 @@ export default function TanklessWaterHeater() {
                     <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 20px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, alignItems: "center", position: "relative", zIndex: 1 }} className="tankless-hero-grid">
                         <style>{`
                             @media (max-width: 968px) {
-                                .tankless-hero-grid { grid-template-columns: 1fr !important; text-align: center; }
+                                .tankless-hero-grid { grid-template-columns: 1fr !important; text-align: center; gap: 40px !important; }
                                 .tankless-hero-img { order: -1; margin-bottom: 20px; }
                             }
                         `}</style>
@@ -42,7 +43,7 @@ export default function TanklessWaterHeater() {
                                 <span style={{ color: "#ff7216" }}>Never Run Out</span><br />
                                 <span>of Hot Water Again.</span>
                             </h1>
-                            <p style={{ fontSize: 20, color: "#64748b", marginBottom: 40, lineHeight: 1.6, maxWidth: 550 }}>
+                            <p style={{ fontSize: "clamp(18px, 2.5vw, 20px)", color: "#334155", marginBottom: 40, lineHeight: 1.6, maxWidth: 550 }}>
                                 Switch to an energy-efficient tankless system and enjoy on-demand comfort while saving space and money.
                             </p>
                             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
@@ -63,7 +64,7 @@ export default function TanklessWaterHeater() {
                                 src={tankless}
                                 alt="Modern Tankless Water Heater"
                                 style={{
-                                    width: "100%", maxHeight: "400px", objectFit: "contain", borderRadius: "30px 30px 0 30px",
+                                    width: "100%", maxHeight: "500px", objectFit: "contain", borderRadius: "30px",
                                     boxShadow: "0 30px 60px -20px rgba(14, 165, 233, 0.25)",
                                     zIndex: 1, position: "relative"
                                 }}
@@ -88,111 +89,59 @@ export default function TanklessWaterHeater() {
                     </div>
                 </div>
 
-                {/* Immersive Layout */}
-                <div style={{ padding: "60px 20px", background: "#f0f9ff" }}>
+                {/* Secondary Section */}
+                <div style={{ padding: "100px 20px", background: "#f0f9ff" }}>
                     <div style={{
                         maxWidth: 1200, margin: "0 auto",
                         background: "#fff",
                         borderRadius: 32, overflow: "hidden",
-                        boxShadow: "0 20px 60px rgba(14, 165, 233, 0.1)",
+                        boxShadow: "0 30px 70px rgba(12, 74, 110, 0.08)",
                         border: '1px solid #ff7216',
                         display: "grid",
                         gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
+                        minHeight: "70vh"
                     }}>
-
                         {/* Content Side */}
-                        <div style={{ display: "flex", flexDirection: "column" }}>
-                            {/* Text Content Header */}
-                            <div style={{ padding: "60px 40px 40px", textAlign: "left" }}>
-                                <div style={{ color: "black", fontWeight: 700, letterSpacing: 1.2, marginBottom: 16, fontSize: 13, textTransform: "uppercase" }}>
-                                    Water Heater Services & Installation
-                                </div>
-                                <h2 style={{ fontSize: "clamp(30px, 4vw, 36px)", fontWeight: 800, marginBottom: 16, lineHeight: 1.2, color: "#ff7216" }}>
-                                    Unlimited Hot Water • Save Space • Reduce Bills
-                                </h2>
-                                <p style={{ fontSize: 18, color: "#64748b", lineHeight: 1.7, maxWidth: 800 }}>
-                                    Switching to a tankless hot water system is one of the best upgrades for modern homes. Enjoy endless hot water while reducing your energy footprint.
-                                </p>
+                        <div style={{ padding: "80px 60px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                            <div style={{ color: "#ff7216", fontWeight: 700, letterSpacing: 2, marginBottom: 16, fontSize: 14, textTransform: "uppercase" }}>
+                                Modern Water Solutions
                             </div>
+                            <h2 style={{ fontSize: "clamp(32px, 5vw, 42px)", fontWeight: 900, marginBottom: 32, lineHeight: 1.1, color: "#0c4a6e" }}>
+                                Endless Hot Water <br /> On Demand
+                            </h2>
+                            <p style={{ fontSize: 18, color: "#44403c", lineHeight: 1.7, marginBottom: 40, maxWidth: 500 }}>
+                                Say goodbye to cold showers and massive storage tanks. Our tankless systems provide a continuous flow of hot water while saving space and energy.
+                            </p>
 
-                            {/* Content Grid */}
-                            <div style={{
-                                display: "grid",
-                                gap: "40px",
-                                padding: "0 40px 60px"
-                            }}>
-                                {/* Why Tankless */}
-                                <div>
-                                    <h4 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: "#ff7216", display: "flex", alignItems: "center", gap: 10 }}>
-                                        <span style={{ width: 8, height: 8, background: "#ff7216", borderRadius: "50%" }}></span>
-                                        Why Choose Tankless?
-                                    </h4>
-                                    <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: 12 }}>
-                                        {[
-                                            "Endless hot water flow (never runs out)",
-                                            "Up to 40% more energy efficient than tanks",
-                                            "Compact wall-mounted design saves space",
-                                            "Longer lifespan (up to 20 years with care)"
-                                        ].map((item, i) => (
-                                            <li key={i} style={{ color: "#64748b", fontSize: 16, display: "flex", alignItems: "flex-start", gap: 10 }}>
-                                                <span style={{ color: "#ff7216", fontWeight: "bold" }}>•</span> {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                {/* When to Upgrade */}
-                                <div>
-                                    <h4 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: "#ff7216", display: "flex", alignItems: "center", gap: 10 }}>
-                                        <span style={{ width: 8, height: 8, background: "#0ea5e9", borderRadius: "50%" }}></span>
-                                        When to Upgrade
-                                    </h4>
-                                    <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: 12 }}>
-                                        {[
-                                            "Current tank is over 10-12 years old",
-                                            "Visible leaks or rust on your current tank",
-                                            "Running out of hot water during busy hours",
-                                            "Wanting to reclaim basement floor space"
-                                        ].map((item, i) => (
-                                            <li key={i} style={{ color: "#64748b", fontSize: 16, display: "flex", alignItems: "flex-start", gap: 10 }}>
-                                                <span style={{ color: "#ff7216", fontWeight: "bold" }}>•</span> {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                {/* Our Services */}
-                                <div>
-                                    <h4 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: "#ff7216", display: "flex", alignItems: "center", gap: 10 }}>
-                                        <span style={{ width: 8, height: 8, background: "#6366f1", borderRadius: "50%" }}></span>
-                                        Why Choose Us?
-                                    </h4>
-                                    <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: 12 }}>
-                                        {[
-                                            "Certified installation and safe gas piping",
-                                            "Official warranty on parts and labor",
-                                            "Annual descaling and maintenance services",
-                                            "Expert advice on sizing for your family"
-                                        ].map((item, i) => (
-                                            <li key={i} style={{ color: "#64748b", fontSize: 16, display: "flex", alignItems: "flex-start", gap: 10 }}>
-                                                <span style={{ color: "#ff7216", fontWeight: "bold" }}>•</span> {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
+                            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 24 }}>
+                                {[
+                                    { title: "On-Demand Heating", desc: "Heats water only when you need it, eliminating standby loss." },
+                                    { title: "Space Saving", desc: "Wall-mounted design reclaims valuable floor space in your home." },
+                                    { title: "Long Lifespan", desc: "Built to last up to 20 years with proper maintenance." }
+                                ].map((item, i) => (
+                                    <li key={i} style={{ display: "flex", gap: 20, alignItems: "flex-start" }}>
+                                        <div style={{ width: 44, height: 44, borderRadius: 12, background: "rgba(255, 114, 22, 0.08)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                                            <Droplets size={22} color="#ff7216" />
+                                        </div>
+                                        <div>
+                                            <h4 style={{ fontSize: 18, fontWeight: 700, color: "#0c4a6e", marginBottom: 6 }}>{item.title}</h4>
+                                            <p style={{ color: "#64748b", margin: 0, fontSize: 15 }}>{item.desc}</p>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
 
                         {/* Image Side */}
-                        <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid rgba(255, 114, 22, 0.1)" }}>
-                            <div style={{ flex: 1, position: "relative", minHeight: 400 }}>
+                        <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
+                            <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
                                 <img
                                     src={tankless}
-                                    alt="Tankless Water System"
+                                    alt="Professional Tankless System"
                                     style={{
                                         width: "100%",
                                         height: "100%",
-                                        objectFit: "cover",
+                                        objectFit: "contain",
                                         display: "block"
                                     }}
                                 />
@@ -202,41 +151,29 @@ export default function TanklessWaterHeater() {
                                     left: 0,
                                     right: 0,
                                     padding: "40px",
-                                    background: "linear-gradient(to top, rgba(12, 74, 110, 0.8), transparent)",
-                                    color: "#fff"
+                                    background: "linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent)",
+                                    color: "#ff7216"
                                 }}>
-                                    <h4 style={{ fontSize: 24, fontWeight: 700, marginBottom: 10 }}>On-Demand Performance</h4>
-                                    <p style={{ opacity: 0.9 }}>Reliable hot water exactly when you need it, for as long as you need it.</p>
+                                    <h4 style={{ fontSize: 28, fontWeight: 800, marginBottom: 12, color: "#ff7216" }}>Infinite Supply</h4>
+                                    <p style={{ opacity: 0.9, color: "#ff7216", fontWeight: 600, fontSize: 16 }}>Never run out of hot water, regardless of demand.</p>
                                 </div>
                             </div>
 
-                            {/* Product Detail Footer */}
-                            <div style={{
-                                background: "#f8fafc",
-                                padding: "30px 40px",
-                                borderTop: "1px solid #e2e8f0",
-                                display: "flex",
-                                flexDirection: "column",
-                                gap: 15
-                            }}>
+                            {/* Info Footer */}
+                            <div style={{ padding: "40px 60px", background: "#fff", borderTop: "1px solid #f1f5f9", display: "flex", flexDirection: "column", gap: 20 }}>
                                 <div>
-                                    <span style={{ fontSize: 13, textTransform: "uppercase", letterSpacing: 1, fontWeight: 700, color: "#ff7216" }}>Product Details</span>
-                                    <h3 style={{ fontSize: 22, fontWeight: 800, color: "#ff7216", margin: "5px 0 0" }}>Rinnai Tankless</h3>
+                                    <span style={{ fontSize: 13, textTransform: "uppercase", letterSpacing: 1.5, fontWeight: 700, color: "#94a3b8" }}>Featured Model</span>
+                                    <h3 style={{ fontSize: 24, fontWeight: 800, color: "#ff7216", margin: "8px 0 0" }}>Rinnai Tankless</h3>
                                 </div>
                                 <div style={{
-                                    padding: "8px 20px",
-                                    background: "#fff",
-                                    border: "1px solid #e2e8f0",
-                                    borderRadius: 100,
-                                    fontWeight: 600,
-                                    color: "#ff7216",
-                                    width: "fit-content"
+                                    display: "inline-flex", alignItems: "center", gap: 12, padding: "12px 24px",
+                                    background: "#f8fafc", borderRadius: 100, border: "1px solid #e2e8f0"
                                 }}>
-                                    Efficiency Leader
+                                    <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#10b981" }}></div>
+                                    <span style={{ fontSize: 15, fontWeight: 700, color: "#475569" }}>Energy Star Certified</span>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 

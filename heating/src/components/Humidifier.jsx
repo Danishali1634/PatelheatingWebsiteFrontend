@@ -89,109 +89,59 @@ export default function Humidifier() {
                     </div>
                 </div>
 
-                {/* Immersive Layout */}
-                <div style={{ padding: "60px 20px", background: "#f8fafc" }}>
+                {/* Secondary Section */}
+                <div style={{ padding: "100px 20px", background: "#f8fafc" }}>
                     <div style={{
                         maxWidth: 1200, margin: "0 auto",
                         background: "#fff",
                         borderRadius: 32, overflow: "hidden",
-                        boxShadow: "0 20px 60px rgba(0,0,0,0.05)",
+                        boxShadow: "0 30px 70px rgba(0, 0, 0, 0.05)",
                         border: '1px solid #ff7216',
                         display: "grid",
                         gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
+                        minHeight: "70vh"
                     }}>
-
                         {/* Content Side */}
-                        <div style={{ display: "flex", flexDirection: "column" }}>
-                            {/* Text Content Header */}
-                            <div style={{ padding: "60px 40px 40px", textAlign: "left" }}>
-                                <div style={{ color: "black", fontWeight: 700, letterSpacing: 1.2, marginBottom: 16, fontSize: 13, textTransform: "uppercase" }}>
-                                    Humidifier Services & Installation
-                                </div>
-                                <h2 style={{ fontSize: "clamp(30px, 4vw, 36px)", fontWeight: 800, marginBottom: 16, lineHeight: 1.2, color: "#ff7216" }}>
-                                    Breathe Better • Sleep Better • Live Healthier
-                                </h2>
-                                <p style={{ fontSize: 18, color: "#64748b", lineHeight: 1.7, maxWidth: 800 }}>
-                                    Dry indoor air can affect your comfort, health, and even your home. A whole-home humidifier restores balanced moisture levels, improving air quality and comfort all year long.
-                                </p>
+                        <div style={{ padding: "80px 60px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                            <div style={{ color: "#ff7216", fontWeight: 700, letterSpacing: 2, marginBottom: 16, fontSize: 14, textTransform: "uppercase" }}>
+                                Whole-Home Humidity
                             </div>
+                            <h2 style={{ fontSize: "clamp(32px, 5vw, 42px)", fontWeight: 900, marginBottom: 32, lineHeight: 1.1, color: "#1e293b" }}>
+                                Balanced Moisture <br /> For Better Health
+                            </h2>
+                            <p style={{ fontSize: 18, color: "#44403c", lineHeight: 1.7, marginBottom: 40, maxWidth: 500 }}>
+                                Dry winter air can cause skin irritation and respiratory issues. Our whole-home humidifiers restore perfect balance to your indoor environment.
+                            </p>
 
-                            {/* Content Grid */}
-                            <div style={{
-                                display: "grid",
-                                gap: "40px",
-                                padding: "0 40px 60px"
-                            }}>
-                                {/* Benefits */}
-                                <div>
-                                    <h4 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: "#ff7216", display: "flex", alignItems: "center", gap: 10 }}>
-                                        <span style={{ width: 8, height: 8, background: "#ff7216", borderRadius: "50%" }}></span>
-                                        Benefits of a Home Humidifier
-                                    </h4>
-                                    <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: 12 }}>
-                                        {[
-                                            "Relieves dry skin, allergies, and sinus irritation",
-                                            "Protects wood floors and furniture from cracking",
-                                            "Improves sleep quality and reduces snoring",
-                                            "Saves energy by helping your home feel warmer"
-                                        ].map((item, i) => (
-                                            <li key={i} style={{ color: "#64748b", fontSize: 16, display: "flex", alignItems: "flex-start", gap: 10 }}>
-                                                <span style={{ color: "#ff7216", fontWeight: "bold" }}>•</span> {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                {/* Services */}
-                                <div>
-                                    <h4 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: "#ff7216", display: "flex", alignItems: "center", gap: 10 }}>
-                                        <span style={{ width: 8, height: 8, background: "#0ea5e9", borderRadius: "50%" }}></span>
-                                        Our Professional Services
-                                    </h4>
-                                    <div style={{ display: "grid", gap: 20 }}>
-                                        <div>
-                                            <h5 style={{ fontSize: 17, fontWeight: 700, color: "#ff7216", marginBottom: 5 }}>Expert Installation</h5>
-                                            <p style={{ fontSize: 15, color: "#64748b", margin: 0 }}>Seamless integration with your existing HVAC system.</p>
+                            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 24 }}>
+                                {[
+                                    { title: "Health Protection", desc: "Reduces dry skin, allergies, and seasonal sinus irritation." },
+                                    { title: "Home Preservation", desc: "Prevents wood floors and furniture from cracking in dry air." },
+                                    { title: "Energy Efficient", desc: "Balanced humidity makes your home feel warmer at lower temps." }
+                                ].map((item, i) => (
+                                    <li key={i} style={{ display: "flex", gap: 20, alignItems: "flex-start" }}>
+                                        <div style={{ width: 44, height: 44, borderRadius: 12, background: "rgba(255, 114, 22, 0.08)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                                            <Droplets size={22} color="#ff7216" />
                                         </div>
                                         <div>
-                                            <h5 style={{ fontSize: 17, fontWeight: 700, color: "#ff7216", marginBottom: 5 }}>Maintenance & Repair</h5>
-                                            <p style={{ fontSize: 15, color: "#64748b", margin: 0 }}>Filter changes, leak checks, and performance optimization.</p>
+                                            <h4 style={{ fontSize: 18, fontWeight: 700, color: "#1e293b", marginBottom: 6 }}>{item.title}</h4>
+                                            <p style={{ color: "#64748b", margin: 0, fontSize: 15 }}>{item.desc}</p>
                                         </div>
-                                    </div>
-                                </div>
-
-                                {/* Why Choose Us */}
-                                <div>
-                                    <h4 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: "#ff7216", display: "flex", alignItems: "center", gap: 10 }}>
-                                        <span style={{ width: 8, height: 8, background: "#6366f1", borderRadius: "50%" }}></span>
-                                        Why Choose Patel Heating?
-                                    </h4>
-                                    <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: 12 }}>
-                                        {[
-                                            "TSSA Licensed Technicians",
-                                            "Precise moisture control solutions",
-                                            "Top brands like AprilAire & Honeywell",
-                                            "Guaranteed customer satisfaction"
-                                        ].map((item, i) => (
-                                            <li key={i} style={{ color: "#64748b", fontSize: 16, display: "flex", alignItems: "flex-start", gap: 10 }}>
-                                                <span style={{ color: "#ff7216", fontWeight: "bold" }}>•</span> {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
 
                         {/* Image Side */}
-                        <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid rgba(0,0,0,0.05)" }}>
-                            <div style={{ flex: 1, position: "relative", minHeight: 400 }}>
+                        <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
+                            <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
                                 <img
                                     src={humidifier}
-                                    alt="Humidifier System"
+                                    alt="Professional Humidifier"
                                     style={{
                                         width: "100%",
                                         height: "100%",
-                                        objectFit: "cover",
+                                        objectFit: "contain",
                                         display: "block"
                                     }}
                                 />
@@ -201,41 +151,29 @@ export default function Humidifier() {
                                     left: 0,
                                     right: 0,
                                     padding: "40px",
-                                    background: "linear-gradient(to top, rgba(0,0,0,0.7), transparent)",
-                                    color: "#fff"
+                                    background: "linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent)",
+                                    color: "#ff7216"
                                 }}>
-                                    <h4 style={{ fontSize: 24, fontWeight: 700, marginBottom: 10 }}>Ideal Air Comfort</h4>
-                                    <p style={{ opacity: 0.9 }}>Maintaining perfect humidity levels for a healthier home environment.</p>
+                                    <h4 style={{ fontSize: 28, fontWeight: 800, marginBottom: 12, color: "#ff7216" }}>Optimal Comfort</h4>
+                                    <p style={{ opacity: 0.9, color: "#ff7216", fontWeight: 600, fontSize: 16 }}>Perfectly balanced moisture for every room.</p>
                                 </div>
                             </div>
 
-                            {/* Product Detail Footer */}
-                            <div style={{
-                                background: "#f8fafc",
-                                padding: "30px 40px",
-                                borderTop: "1px solid #e2e8f0",
-                                display: "flex",
-                                flexDirection: "column",
-                                gap: 15
-                            }}>
+                            {/* Info Footer */}
+                            <div style={{ padding: "40px 60px", background: "#fff", borderTop: "1px solid #f1f5f9", display: "flex", flexDirection: "column", gap: 20 }}>
                                 <div>
-                                    <span style={{ fontSize: 13, textTransform: "uppercase", letterSpacing: 1, fontWeight: 700, color: "#ff7216" }}>Featured Product</span>
-                                    <h3 style={{ fontSize: 22, fontWeight: 800, color: "#ff7216", margin: "5px 0 0" }}>AprilAire Whole-Home</h3>
+                                    <span style={{ fontSize: 13, textTransform: "uppercase", letterSpacing: 1.5, fontWeight: 700, color: "#94a3b8" }}>Featured Product</span>
+                                    <h3 style={{ fontSize: 24, fontWeight: 800, color: "#ff7216", margin: "8px 0 0" }}>AprilAire Whole-Home</h3>
                                 </div>
                                 <div style={{
-                                    padding: "8px 20px",
-                                    background: "#fff",
-                                    border: "1px solid #e2e8f0",
-                                    borderRadius: 100,
-                                    fontWeight: 600,
-                                    color: "#ff7216",
-                                    width: "fit-content"
+                                    display: "inline-flex", alignItems: "center", gap: 12, padding: "12px 24px",
+                                    background: "#f8fafc", borderRadius: 100, border: "1px solid #e2e8f0"
                                 }}>
-                                    Top Rated
+                                    <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#10b981" }}></div>
+                                    <span style={{ fontSize: 15, fontWeight: 700, color: "#475569" }}>Precision Digital Control</span>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 

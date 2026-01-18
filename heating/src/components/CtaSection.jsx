@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 
 export const CtaSection = ({ title, description, backgroundColor, descriptionColor }) => {
-    let red = 'red'
+
 
     return (
         <div style={{

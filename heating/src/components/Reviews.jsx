@@ -357,6 +357,45 @@ export default function Reviews() {
                             </div>
                         ))}
                     </div>
+                    {/* See All Google Reviews Button */}
+                    <div style={{ textAlign: 'center', marginTop: '60px' }}>
+                        <a
+                            href="https://www.google.com/search?newwindow=1&sxsrf=ANbL-n5QT7eRpdhjHBS3RxiOs5Qd2pG-Tw:1768746707488&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOXVkzfTrA0su4ggznZBy_T2AGaZ_bFkdLhPKAhJNQa34d4YhlIDMe3Bgw4nZE2apMvfwbIOzG_2k_yU2mVOEv0qVf50LHn58yGRhDxxm4xXU4ci3HvIsxmG1FFVNy94qEccei-k%3D&q=Patel+Heating+and+Air+Conditioning+Reviews&aic=0"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ textDecoration: 'none' }}
+                        >
+                            <button style={{
+                                padding: "16px 40px",
+                                background: "white",
+                                color: "#ff7216",
+                                border: "2px solid #ff7216",
+                                borderRadius: "50px",
+                                fontSize: "16px",
+                                fontWeight: "700",
+                                cursor: "pointer",
+                                transition: "all 0.3s ease",
+                                display: "inline-flex",
+                                alignItems: "center",
+                                gap: "10px",
+                                boxShadow: "0 4px 15px rgba(255,114,22,0.1)"
+                            }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.background = "#ff7216";
+                                    e.currentTarget.style.color = "white";
+                                    e.currentTarget.style.transform = "translateY(-3px)";
+                                    e.currentTarget.style.boxShadow = "0 8px 25px rgba(255,114,22,0.3)";
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.background = "white";
+                                    e.currentTarget.style.color = "#ff7216";
+                                    e.currentTarget.style.transform = "translateY(0)";
+                                    e.currentTarget.style.boxShadow = "0 4px 15px rgba(255,114,22,0.1)";
+                                }}>
+                                <span>🌐</span> See All Google Reviews
+                            </button>
+                        </a>
+                    </div>
 
                     {/* Enhanced Call to Action Footer */}
                     <div className="cta-footer" style={{

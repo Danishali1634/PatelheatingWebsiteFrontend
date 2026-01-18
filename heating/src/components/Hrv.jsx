@@ -2,7 +2,7 @@ import React from "react";
 import { Wind, ArrowLeftRight, Leaf, ShieldCheck, ArrowRight, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import hrvimage from "../assets/hrvimage.png";
-import ervimage from "../assets/ervimage.jpg";
+
 
 
 export default function Hrv() {
@@ -90,111 +90,59 @@ export default function Hrv() {
                     </div>
                 </div>
 
-                {/* Immersive Layout */}
-                <div style={{ padding: "60px 20px", background: "#f0fdf4" }}>
+                {/* Secondary Section */}
+                <div style={{ padding: "100px 20px", background: "#f0fdf4" }}>
                     <div style={{
                         maxWidth: 1200, margin: "0 auto",
                         background: "#fff",
                         borderRadius: 32, overflow: "hidden",
-                        boxShadow: "0 20px 60px rgba(22, 163, 74, 0.1)",
+                        boxShadow: "0 30px 70px rgba(6, 78, 59, 0.08)",
                         border: '1px solid #ff7216',
                         display: "grid",
                         gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
+                        minHeight: "70vh"
                     }}>
-
                         {/* Content Side */}
-                        <div style={{ display: "flex", flexDirection: "column" }}>
-                            {/* Text Content Header */}
-                            <div style={{ padding: "60px 40px 40px", textAlign: "left" }}>
-                                <div style={{ color: "black", fontWeight: 700, letterSpacing: 1.2, marginBottom: 16, fontSize: 13, textTransform: "uppercase" }}>
-                                    HRV & ERV Ventilation Services
-                                </div>
-                                <h2 style={{ fontSize: "clamp(30px, 4vw, 36px)", fontWeight: 800, marginBottom: 16, lineHeight: 1.2, color: "#ff7216" }}>
-                                    Fresh Air • Healthier Living • Lower Energy Bills
-                                </h2>
-                                <p style={{ fontSize: 18, color: "#64748b", lineHeight: 1.7, maxWidth: 800 }}>
-                                    Your home’s indoor air can be more polluted than the outdoor air. These systems bring fresh, clean air into your home while saving energy — keeping your family healthy and comfortable.
-                                </p>
+                        <div style={{ padding: "80px 60px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                            <div style={{ color: "#ff7216", fontWeight: 700, letterSpacing: 2, marginBottom: 16, fontSize: 14, textTransform: "uppercase" }}>
+                                Heat Recovery ventilation
                             </div>
+                            <h2 style={{ fontSize: "clamp(32px, 5vw, 42px)", fontWeight: 900, marginBottom: 32, lineHeight: 1.1, color: "#064e3b" }}>
+                                Fresh Outdoor Air <br /> Without Heat Loss
+                            </h2>
+                            <p style={{ fontSize: 18, color: "#44403c", lineHeight: 1.7, marginBottom: 40, maxWidth: 500 }}>
+                                HRVs are essential for modern airtight homes. They bring in fresh outdoor air while transferring heat from the outgoing stale air.
+                            </p>
 
-                            {/* Content Grid */}
-                            <div style={{
-                                display: "grid",
-                                gap: "40px",
-                                padding: "0 40px 60px"
-                            }}>
-                                {/* HRV vs ERV */}
-                                <div>
-                                    <h4 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: "#ff7216", display: "flex", alignItems: "center", gap: 10 }}>
-                                        <span style={{ width: 8, height: 8, background: "#ff7216", borderRadius: "50%" }}></span>
-                                        HRV vs ERV: Which is Right?
-                                    </h4>
-                                    <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: 12 }}>
-                                        {[
-                                            "HRV: Best for colder climates, transfers heat only",
-                                            "ERV: Best for humid climates, transfers heat and moisture",
-                                            "Both improve overall indoor air quality significantly",
-                                            "Both reduce the workload on your furnace and AC"
-                                        ].map((item, i) => (
-                                            <li key={i} style={{ color: "#64748b", fontSize: 16, display: "flex", alignItems: "flex-start", gap: 10 }}>
-                                                <span style={{ color: "#ff7216", fontWeight: "bold" }}>•</span> {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                {/* Benefits */}
-                                <div>
-                                    <h4 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: "#ff7216", display: "flex", alignItems: "center", gap: 10 }}>
-                                        <span style={{ width: 8, height: 8, background: "#16a34a", borderRadius: "50%" }}></span>
-                                        Key Benefits
-                                    </h4>
-                                    <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: 12 }}>
-                                        {[
-                                            "Eliminates stuffy, stale indoor air odors",
-                                            "Prevents moisture and mold buildup on windows",
-                                            "Filters out dust, allergens, and local pollutants",
-                                            "Maintains balanced pressure throughout the home"
-                                        ].map((item, i) => (
-                                            <li key={i} style={{ color: "#64748b", fontSize: 16, display: "flex", alignItems: "flex-start", gap: 10 }}>
-                                                <span style={{ color: "#ff7216", fontWeight: "bold" }}>•</span> {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                {/* Why Choose Us */}
-                                <div>
-                                    <h4 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: "#ff7216", display: "flex", alignItems: "center", gap: 10 }}>
-                                        <span style={{ width: 8, height: 8, background: "#0ea5e9", borderRadius: "50%" }}></span>
-                                        Why Choose Us?
-                                    </h4>
-                                    <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: 12 }}>
-                                        {[
-                                            "Licensed ventilation specialists (HRAI Certified)",
-                                            "Expert sizing for airtight, modern homes",
-                                            "Professional integration with existing HVAC",
-                                            "Full maintenance and filter cleaning programs"
-                                        ].map((item, i) => (
-                                            <li key={i} style={{ color: "#64748b", fontSize: 16, display: "flex", alignItems: "flex-start", gap: 10 }}>
-                                                <span style={{ color: "#ff7216", fontWeight: "bold" }}>•</span> {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
+                            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 24 }}>
+                                {[
+                                    { title: "Heat Retention", desc: "Transfers up to 80% of heat from outgoing air to incoming air." },
+                                    { title: "Air Quality", desc: "Constant supply of filtered fresh air, removing indoor pollutants." },
+                                    { title: "Energy Efficient", desc: "High-efficiency motors that run quietly in the background." }
+                                ].map((item, i) => (
+                                    <li key={i} style={{ display: "flex", gap: 20, alignItems: "flex-start" }}>
+                                        <div style={{ width: 44, height: 44, borderRadius: 12, background: "rgba(255, 114, 22, 0.08)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                                            <Wind size={22} color="#ff7216" />
+                                        </div>
+                                        <div>
+                                            <h4 style={{ fontSize: 18, fontWeight: 700, color: "#064e3b", marginBottom: 6 }}>{item.title}</h4>
+                                            <p style={{ color: "#64748b", margin: 0, fontSize: 15 }}>{item.desc}</p>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
 
                         {/* Image Side */}
-                        <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid rgba(255, 114, 22, 0.1)" }}>
-                            <div style={{ flex: 1, position: "relative", minHeight: 400 }}>
+                        <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
+                            <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
                                 <img
                                     src={hrvimage}
-                                    alt="HRV Unit Installation"
+                                    alt="Professional HRV System"
                                     style={{
                                         width: "100%",
                                         height: "100%",
-                                        objectFit: "cover",
+                                        objectFit: "contain",
                                         display: "block"
                                     }}
                                 />
@@ -204,41 +152,29 @@ export default function Hrv() {
                                     left: 0,
                                     right: 0,
                                     padding: "40px",
-                                    background: "linear-gradient(to top, rgba(6, 78, 59, 0.8), transparent)",
-                                    color: "#fff"
+                                    background: "linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent)",
+                                    color: "#ff7216"
                                 }}>
-                                    <h4 style={{ fontSize: 24, fontWeight: 700, marginBottom: 10 }}>Total Air Control</h4>
-                                    <p style={{ opacity: 0.9 }}>Experience the difference that constant fresh air makes in your daily life.</p>
+                                    <h4 style={{ fontSize: 28, fontWeight: 800, marginBottom: 12, color: "#ff7216" }}>Balanced Air</h4>
+                                    <p style={{ opacity: 0.9, color: "#ff7216", fontWeight: 600, fontSize: 16 }}>Breathe the difference of constant, filtered ventilation.</p>
                                 </div>
                             </div>
 
-                            {/* Product Detail Footer */}
-                            <div style={{
-                                background: "#f8fafc",
-                                padding: "30px 40px",
-                                borderTop: "1px solid #e2e8f0",
-                                display: "flex",
-                                flexDirection: "column",
-                                gap: 15
-                            }}>
+                            {/* Info Footer */}
+                            <div style={{ padding: "40px 60px", background: "#fff", borderTop: "1px solid #f1f5f9", display: "flex", flexDirection: "column", gap: 20 }}>
                                 <div>
-                                    <span style={{ fontSize: 13, textTransform: "uppercase", letterSpacing: 1, fontWeight: 700, color: "#ff7216" }}>Product Details</span>
-                                    <h3 style={{ fontSize: 22, fontWeight: 800, color: "#ff7216", margin: "5px 0 0" }}>Venmar HRV</h3>
+                                    <span style={{ fontSize: 13, textTransform: "uppercase", letterSpacing: 1.5, fontWeight: 700, color: "#94a3b8" }}>Featured Model</span>
+                                    <h3 style={{ fontSize: 24, fontWeight: 800, color: "#ff7216", margin: "8px 0 0" }}>Venmar HRV</h3>
                                 </div>
                                 <div style={{
-                                    padding: "8px 20px",
-                                    background: "#fff",
-                                    border: "1px solid #e2e8f0",
-                                    borderRadius: 100,
-                                    fontWeight: 600,
-                                    color: "#ff7216",
-                                    width: "fit-content"
+                                    display: "inline-flex", alignItems: "center", gap: 12, padding: "12px 24px",
+                                    background: "#f8fafc", borderRadius: 100, border: "1px solid #e2e8f0"
                                 }}>
-                                    HRAI Certified
+                                    <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#10b981" }}></div>
+                                    <span style={{ fontSize: 15, fontWeight: 700, color: "#475569" }}>HRAI Certified System</span>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 

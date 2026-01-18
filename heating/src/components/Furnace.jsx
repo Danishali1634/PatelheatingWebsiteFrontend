@@ -10,9 +10,9 @@ export default function Furnace() {
             <title>Furnace Services - Patel Heating & Air Conditioning</title>
             <div style={{ fontFamily: "Inter, sans-serif", color: "#0d0d0d" }}>
 
-                {/* Custom Hero: Light & Cozy Warmth */}
+                {/* Custom Hero */}
                 <div style={{
-                    position: "relative", paddingTop: 40, paddingBottom: 60, overflow: "hidden",
+                    position: "relative", paddingTop: 80, paddingBottom: 80, overflow: "hidden",
                     background: "linear-gradient(to bottom, #fff7ed, #fff)"
                 }}>
                     <div style={{ position: "absolute", top: -100, right: -100, width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, #fed7aa 0%, transparent 70%)", opacity: 0.5 }}></div>
@@ -21,7 +21,7 @@ export default function Furnace() {
                     <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 20px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, alignItems: "center", position: "relative", zIndex: 1 }} className="furnace-hero-grid">
                         <style>{`
                             @media (max-width: 968px) {
-                                .furnace-hero-grid { grid-template-columns: 1fr !important; text-align: center; }
+                                .furnace-hero-grid { grid-template-columns: 1fr !important; text-align: center; gap: 40px !important; }
                                 .furnace-hero-img { order: -1; margin-bottom: 20px; }
                                 .floating-card { display: none !important; }
                             }
@@ -43,7 +43,7 @@ export default function Furnace() {
                                 Ultimate <span style={{ color: "#ff7216" }}> Home </span>Comfort<br />
                                 <span style={{ color: "#ff7216" }}>Made Reliable.</span>
                             </h1>
-                            <p style={{ fontSize: 20, color: "#78716c", marginBottom: 40, lineHeight: 1.6, maxWidth: 550 }}>
+                            <p style={{ fontSize: "clamp(18px, 2.5vw, 20px)", color: "#44403c", marginBottom: 40, lineHeight: 1.6, maxWidth: 550 }}>
                                 Don't let the cold in. Experience quiet, efficient, and reliable warmth with our top-tier furnace systems.
                             </p>
                             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
@@ -64,7 +64,7 @@ export default function Furnace() {
                                 src={furanceimg}
                                 alt="Modern Furnace Unit"
                                 style={{
-                                    width: "100%", maxHeight: "400px", objectFit: "contain", borderRadius: "30px 30px 0 30px",
+                                    width: "100%", maxHeight: "500px", objectFit: "contain", borderRadius: "30px",
                                     boxShadow: "0 30px 60px -20px rgba(251, 146, 60, 0.25)",
                                     zIndex: 1, position: "relative"
                                 }}
@@ -89,111 +89,59 @@ export default function Furnace() {
                     </div>
                 </div>
 
-                {/* Immersive Layout */}
-                <div style={{ padding: "60px 20px", background: "#fff7ed" }}>
+                {/* Secondary Section */}
+                <div style={{ padding: "100px 20px", background: "#fff7ed" }}>
                     <div style={{
                         maxWidth: 1200, margin: "0 auto",
                         background: "#fff",
                         borderRadius: 32, overflow: "hidden",
-                        boxShadow: "0 20px 60px rgba(251, 146, 60, 0.1)",
+                        boxShadow: "0 30px 70px rgba(69, 26, 3, 0.08)",
                         border: '1px solid #ff7216',
                         display: "grid",
                         gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
+                        minHeight: "70vh"
                     }}>
-
                         {/* Content Side */}
-                        <div style={{ display: "flex", flexDirection: "column" }}>
-                            {/* Text Content Header */}
-                            <div style={{ padding: "60px 40px 40px", textAlign: "left" }}>
-                                <div style={{ color: "black", fontWeight: 700, letterSpacing: 1.2, marginBottom: 16, fontSize: 13, textTransform: "uppercase" }}>
-                                    Furnace Installation & Repair
-                                </div>
-                                <h2 style={{ fontSize: "clamp(30px, 4vw, 36px)", fontWeight: 800, marginBottom: 16, lineHeight: 1.2, color: "#ff7216" }}>
-                                    Efficient Heating • Lower Bills • Total Comfort
-                                </h2>
-                                <p style={{ fontSize: 18, color: "#64748b", lineHeight: 1.7, maxWidth: 800 }}>
-                                    Looking for dependable furnace and heating services? We specialize in high-efficiency furnaces—from expert installation to repair and maintenance, all with guaranteed quality.
-                                </p>
+                        <div style={{ padding: "80px 60px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                            <div style={{ color: "#ff7216", fontWeight: 700, letterSpacing: 2, marginBottom: 16, fontSize: 14, textTransform: "uppercase" }}>
+                                Efficiency & Value
                             </div>
+                            <h2 style={{ fontSize: "clamp(32px, 5vw, 42px)", fontWeight: 900, marginBottom: 32, lineHeight: 1.1, color: "#451a03" }}>
+                                Smart Heating for <br /> Modern Homes
+                            </h2>
+                            <p style={{ fontSize: 18, color: "#44403c", lineHeight: 1.7, marginBottom: 40, maxWidth: 500 }}>
+                                Our high-efficiency furnaces don't just heat your home—they optimize your energy usage and improve indoor air quality.
+                            </p>
 
-                            {/* Content Grid */}
-                            <div style={{
-                                display: "grid",
-                                gap: "40px",
-                                padding: "0 40px 60px"
-                            }}>
-                                {/* Why High-Efficiency */}
-                                <div>
-                                    <h4 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: "#ff7216", display: "flex", alignItems: "center", gap: 10 }}>
-                                        <span style={{ width: 8, height: 8, background: "#ff7216", borderRadius: "50%" }}></span>
-                                        Why High-Efficiency?
-                                    </h4>
-                                    <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: 12 }}>
-                                        {[
-                                            "Cuts heating bills by up to 30% annually",
-                                            "Advanced air filtration for healthier air",
-                                            "Quiet variable-speed blower technology",
-                                            "Better for the environment and your wallet"
-                                        ].map((item, i) => (
-                                            <li key={i} style={{ color: "#64748b", fontSize: 16, display: "flex", alignItems: "flex-start", gap: 10 }}>
-                                                <span style={{ color: "#ff7216", fontWeight: "bold" }}>•</span> {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                {/* Options */}
-                                <div>
-                                    <h4 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: "#ff7216", display: "flex", alignItems: "center", gap: 10 }}>
-                                        <span style={{ width: 8, height: 8, background: "#f97316", borderRadius: "50%" }}></span>
-                                        Furnace Options
-                                    </h4>
-                                    <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: 12 }}>
-                                        {[
-                                            "Single-Stage (95% AFUE) Reliable Value",
-                                            "Two-Stage (96% AFUE) Enhanced Comfort",
-                                            "Modulating (98% AFUE) Ultimate Precision",
-                                            "Compatible with Smart Thermostats"
-                                        ].map((item, i) => (
-                                            <li key={i} style={{ color: "#64748b", fontSize: 16, display: "flex", alignItems: "flex-start", gap: 10 }}>
-                                                <span style={{ color: "#ff7216", fontWeight: "bold" }}>•</span> {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                {/* Why Choose Us */}
-                                <div>
-                                    <h4 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: "#ff7216", display: "flex", alignItems: "center", gap: 10 }}>
-                                        <span style={{ width: 8, height: 8, background: "#fbbf24", borderRadius: "50%" }}></span>
-                                        Why Choose Us?
-                                    </h4>
-                                    <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: 12 }}>
-                                        {[
-                                            "Licensed HVAC heating specialists",
-                                            "Upfront pricing with no hidden costs",
-                                            "Emergency heating repair available",
-                                            "Quality cleanup and eco-disposal of old units"
-                                        ].map((item, i) => (
-                                            <li key={i} style={{ color: "#64748b", fontSize: 16, display: "flex", alignItems: "flex-start", gap: 10 }}>
-                                                <span style={{ color: "#ff7216", fontWeight: "bold" }}>•</span> {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
+                            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 24 }}>
+                                {[
+                                    { title: "Energy Savings", desc: "Up to 30% reduction in annual heating costs." },
+                                    { title: "Advanced Comfort", desc: "Variable-speed technology for consistent warmth." },
+                                    { title: "Healthier Air", desc: "Built-in filtration systems for a cleaner home." }
+                                ].map((item, i) => (
+                                    <li key={i} style={{ display: "flex", gap: 20, alignItems: "flex-start" }}>
+                                        <div style={{ width: 44, height: 44, borderRadius: 12, background: "rgba(255, 114, 22, 0.08)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                                            <Zap size={22} color="#ff7216" />
+                                        </div>
+                                        <div>
+                                            <h4 style={{ fontSize: 18, fontWeight: 700, color: "#451a03", marginBottom: 6 }}>{item.title}</h4>
+                                            <p style={{ color: "#64748b", margin: 0, fontSize: 15 }}>{item.desc}</p>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
 
                         {/* Image Side */}
-                        <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid rgba(255, 114, 22, 0.1)" }}>
-                            <div style={{ flex: 1, position: "relative", minHeight: 400 }}>
+                        <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
+                            <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
                                 <img
                                     src={furanceimg}
                                     alt="Reliable Heating System"
                                     style={{
                                         width: "100%",
                                         height: "100%",
-                                        objectFit: "cover",
+                                        objectFit: "contain",
                                         display: "block"
                                     }}
                                 />
@@ -203,56 +151,45 @@ export default function Furnace() {
                                     left: 0,
                                     right: 0,
                                     padding: "40px",
-                                    background: "linear-gradient(to top, rgba(69, 26, 3, 0.8), transparent)",
-                                    color: "#fff"
+                                    background: "linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent)",
+                                    color: "#ff7216"
                                 }}>
-                                    <h4 style={{ fontSize: 24, fontWeight: 700, marginBottom: 10 }}>Steady Warmth</h4>
-                                    <p style={{ opacity: 0.9 }}>Precision heating built to withstand the harshest Canadian winters.</p>
+                                    <h4 style={{ fontSize: 28, fontWeight: 800, marginBottom: 12, color: "#ff7216" }}>Steady Warmth</h4>
+                                    <p style={{ opacity: 0.9, color: "#ff7216", fontWeight: 600, fontSize: 16 }}>Precision heating for harsh Canadian winters.</p>
                                 </div>
                             </div>
 
-                            {/* Product Detail Footer */}
-                            <div style={{
-                                background: "#f8fafc",
-                                padding: "30px 40px",
-                                borderTop: "1px solid #e2e8f0",
-                                display: "flex",
-                                flexDirection: "column",
-                                gap: 15
-                            }}>
+                            {/* Info Footer */}
+                            <div style={{ padding: "40px 60px", background: "#fff", borderTop: "1px solid #f1f5f9", display: "flex", flexDirection: "column", gap: 20 }}>
                                 <div>
-                                    <span style={{ fontSize: 13, textTransform: "uppercase", letterSpacing: 1, fontWeight: 700, color: "#ff7216" }}>Product Details</span>
-                                    <h3 style={{ fontSize: 22, fontWeight: 800, color: "#ff7216", margin: "5px 0 0" }}>Lennox Elite Series</h3>
+                                    <span style={{ fontSize: 13, textTransform: "uppercase", letterSpacing: 1.5, fontWeight: 700, color: "#94a3b8" }}>Featured Model</span>
+                                    <h3 style={{ fontSize: 24, fontWeight: 800, color: "#ff7216", margin: "8px 0 0" }}>Lennox Elite Series</h3>
                                 </div>
                                 <div style={{
-                                    padding: "8px 20px",
-                                    background: "#fff",
-                                    border: "1px solid #e2e8f0",
-                                    borderRadius: 100,
-                                    fontWeight: 600,
-                                    color: "#ff7216",
-                                    width: "fit-content"
+                                    display: "inline-flex", alignItems: "center", gap: 12, padding: "12px 24px",
+                                    background: "#f8fafc", borderRadius: 100, border: "1px solid #e2e8f0"
                                 }}>
-                                    96% AFUE Efficiency
+                                    <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#10b981" }}></div>
+                                    <span style={{ fontSize: 15, fontWeight: 700, color: "#475569" }}>96% AFUE Rated Efficiency</span>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
                 {/* CTA */}
-                <div style={{ padding: "60px 20px", background: "#fff", textAlign: "center" }}>
+                <div style={{ padding: "100px 20px", background: "#fff", textAlign: "center" }}>
                     <div style={{ maxWidth: 800, margin: "0 auto" }}>
-                        <h2 style={{ fontSize: "36px", fontWeight: 800, marginBottom: 24, color: '#ff7216' }}>Stay warm this winter.</h2>
-                        <p style={{ fontSize: 18, color: "#64748b", marginBottom: 40 }}>From annual tune-ups to emergency installs, we've got you covered.</p>
+                        <h2 style={{ fontSize: "clamp(36px, 6vw, 48px)", fontWeight: 900, marginBottom: 24, color: '#451a03' }}>Stay warm this winter.</h2>
+                        <p style={{ fontSize: 20, color: "#64748b", marginBottom: 40, lineHeight: 1.6 }}>From annual tune-ups to emergency installs, we've got you covered with expert care and 24/7 support.</p>
                         <Link to="/contact" style={{
                             display: "inline-flex", alignItems: "center", gap: 12,
                             textDecoration: "none", background: "#ff7216", color: "#fff",
-                            padding: "18px 40px", borderRadius: 100, fontWeight: 700, fontSize: 18,
-                            boxShadow: "0 10px 30px rgba(251, 146, 60, 0.4)"
+                            padding: "20px 48px", borderRadius: 100, fontWeight: 700, fontSize: 18,
+                            boxShadow: "0 15px 35px rgba(251, 146, 60, 0.4)",
+                            transition: "all 0.3s"
                         }}>
-                            <Calendar size={20} /> Schedule Maintenance
+                            <Calendar size={22} /> Schedule Maintenance
                         </Link>
                     </div>
                 </div>

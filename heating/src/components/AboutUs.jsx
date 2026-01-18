@@ -1,10 +1,10 @@
 import React from "react";
 import { Award, Users, Heart, Shield, Clock, ThumbsUp, Zap, Target, CheckCircle, Phone, MapPin } from "lucide-react";
 import brandLogo from "../assets/brandLogo.png";
+import { Link } from "react-router-dom";
 
 export default function AboutPage() {
     const orange = "#ff7216";
-    const red = "#e31e25";
     const dark = "#0d0d0d";
     const lightGray = "#f9fafb";
 
@@ -576,30 +576,30 @@ export default function AboutPage() {
                             </p>
                         </div>
 
-                        <Link to="/contact">
-                            <button style={{
-                                backgroundColor: "#fff",
-                                color: orange,
-                                border: "none",
-                                padding: "18px 40px",
-                                borderRadius: 12,
-                                fontSize: 17,
-                                fontWeight: 700,
-                                cursor: "pointer",
-                                boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
-                                transition: "transform 0.2s, box-shadow 0.2s",
-                                whiteSpace: "nowrap"
+                        <Link to="/contact" style={{
+                            backgroundColor: "#fff",
+                            color: orange,
+                            border: "none",
+                            padding: "18px 40px",
+                            borderRadius: 12,
+                            fontSize: 17,
+                            fontWeight: 700,
+                            cursor: "pointer",
+                            boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
+                            transition: "transform 0.2s, box-shadow 0.2s",
+                            whiteSpace: "nowrap",
+                            textDecoration: "none",
+                            display: "inline-block"
+                        }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = "translateY(-2px)";
+                                e.currentTarget.style.boxShadow = "0 15px 40px rgba(0,0,0,0.3)";
                             }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.transform = "translateY(-2px)";
-                                    e.currentTarget.style.boxShadow = "0 15px 40px rgba(0,0,0,0.3)";
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.transform = "translateY(0)";
-                                    e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.2)";
-                                }}>
-                                Contact Us
-                            </button>
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = "translateY(0)";
+                                e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.2)";
+                            }}>
+                            Contact Us
                         </Link>
                     </div>
                 </div>
