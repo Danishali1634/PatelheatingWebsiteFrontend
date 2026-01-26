@@ -13,6 +13,7 @@ import {
     Instagram
 } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export default function Blogs({ limit = 6, isHome }) {
     const [blogs, setBlogs] = useState([]);
@@ -67,7 +68,7 @@ export default function Blogs({ limit = 6, isHome }) {
         setLoading(true);
 
         try {
-            const perPage = isHome ? (limit || 6) : 9;
+            const perPage = isHome ? (limit || 6) : 10;
             let url = `https://blog.patelheating.ca/wp-json/wp/v2/posts?_embed&page=${pageNum}&per_page=${perPage}`;
             if (catId) {
                 url += `&categories=${catId}`;
@@ -107,25 +108,22 @@ export default function Blogs({ limit = 6, isHome }) {
         fetchBlogs(1, true, catId);
     };
 
-    // Intersection Observer callback
-    const lastBlogElementRef = useCallback(node => {
-        if (loading || isHome) return;
-        if (observer.current) observer.current.disconnect();
-
-        observer.current = new IntersectionObserver(entries => {
-            if (entries[0].isIntersecting && page < totalPages && !isFetching.current) {
-                const next = page + 1;
-                setPage(next);
-                fetchBlogs(next);
-            }
-        });
-
-        if (node) observer.current.observe(node);
-    }, [loading, isHome, page, totalPages, fetchBlogs]);
+    // Load More functionality
+    const handleLoadMore = () => {
+        if (page < totalPages && !loading) {
+            const next = page + 1;
+            setPage(next);
+            fetchBlogs(next);
+        }
+    };
 
     return (
         <>
-            {!isHome && <title>Blog - Patel Heating & Air Conditioning</title>}
+            <Helmet>
+                <title>Blog - Patel Heating & Air Conditioning</title>
+                <meta name="description" content="Stay updated with the latest HVAC tips, energy-saving advice, and professional maintenance guides from Patel Heating & Air Conditioning." />
+                <meta name="keywords" content="HVAC blog, heating tips, air conditioning advice, Brampton HVAC, Patel Heating blogs" />
+            </Helmet>
 
             <div
                 style={{
@@ -343,6 +341,7 @@ export default function Blogs({ limit = 6, isHome }) {
                                                         "https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?w=800"
                                                     }
                                                     alt={blog.title.rendered}
+                                                    loading="lazy"
                                                     style={{
                                                         width: "100%",
                                                         height: "100%",
@@ -404,7 +403,25 @@ export default function Blogs({ limit = 6, isHome }) {
                                                     {blog.excerpt.rendered.replace(/<[^>]*>?/gm, "")}
                                                 </p>
 
-                                                {/*  */}
+                                                <Link
+                                                    to={`/blog/${blog.slug}`}
+                                                    style={{
+                                                        display: "inline-flex",
+                                                        alignItems: "center",
+                                                        gap: 8,
+                                                        color: orange,
+                                                        fontWeight: 700,
+                                                        fontSize: 15,
+                                                        textDecoration: "none",
+                                                        marginTop: "auto",
+                                                        width: "fit-content",
+                                                        transition: "all 0.3s ease"
+                                                    }}
+                                                    onMouseEnter={(e) => e.currentTarget.style.gap = "12px"}
+                                                    onMouseLeave={(e) => e.currentTarget.style.gap = "8px"}
+                                                >
+                                                    Read More <ArrowRight size={18} />
+                                                </Link>
                                             </div>
                                         </article>
                                     ))}
@@ -416,25 +433,66 @@ export default function Blogs({ limit = 6, isHome }) {
                                 </div>
                             )}
 
-                            {/* Load More Section - Now a Sentinel for Infinite Scroll */}
-                            {!isHome && (
+                            {/* Load More Button */}
+                            {!isHome && page < totalPages && (
                                 <div
-                                    ref={lastBlogElementRef}
                                     style={{
                                         display: "flex",
                                         justifyContent: "center",
                                         alignItems: "center",
-                                        marginTop: 40,
-                                        padding: "20px",
-                                        minHeight: 100
+                                        marginTop: 60,
+                                        gap: 20
                                     }}
                                 >
-                                    {loading && page > 1 && (
-                                        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
-                                            <Loader2 size={32} color={orange} className="animate-spin" />
-                                            <span style={{ color: "#94a3b8", fontSize: 14, fontWeight: 600 }}>Loading more posts...</span>
-                                        </div>
-                                    )}
+                                    <button
+                                        onClick={handleLoadMore}
+                                        disabled={loading}
+                                        style={{
+                                            padding: "16px 40px",
+                                            borderRadius: 50,
+                                            border: "none",
+                                            background: loading ? "#e2e8f0" : orange,
+                                            color: "#fff",
+                                            fontSize: 16,
+                                            fontWeight: 800,
+                                            cursor: loading ? "not-allowed" : "pointer",
+                                            boxShadow: "0 10px 25px rgba(255, 114, 22, 0.2)",
+                                            transition: "all 0.3s ease",
+                                            display: "flex",
+                                            alignItems: "center",
+                                            gap: 12
+                                        }}
+                                        onMouseEnter={(e) => {
+                                            if (!loading) {
+                                                e.currentTarget.style.transform = "translateY(-4px)";
+                                                e.currentTarget.style.boxShadow = "0 15px 35px rgba(255, 114, 22, 0.3)";
+                                            }
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            if (!loading) {
+                                                e.currentTarget.style.transform = "translateY(0)";
+                                                e.currentTarget.style.boxShadow = "0 10px 25px rgba(255, 114, 22, 0.2)";
+                                            }
+                                        }}
+                                    >
+                                        {loading ? (
+                                            <>
+                                                <Loader2 size={20} className="animate-spin" />
+                                                Loading...
+                                            </>
+                                        ) : (
+                                            <>
+                                                Show More Stories <ArrowRight size={20} />
+                                            </>
+                                        )}
+                                    </button>
+                                </div>
+                            )}
+
+                            {/* End of list message */}
+                            {!isHome && page >= totalPages && blogs.length > 0 && (
+                                <div style={{ textAlign: "center", marginTop: 40, color: "#94a3b8", fontWeight: 600 }}>
+                                    You've reached the end of our stories.
                                 </div>
                             )}
 

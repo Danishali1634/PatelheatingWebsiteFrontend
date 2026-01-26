@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from "lucide-react";
 export default function ContactPage() {
     const orange = "#ff7216";
@@ -68,7 +69,8 @@ export default function ContactPage() {
         setStatus('loading');
 
         try {
-            const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5001/api/contact';
+            // const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5173/api/contact';
+            const apiUrl = 'http://localhost:5001/api/contact';
             const isAspx = apiUrl.toLowerCase().endsWith('.aspx');
 
             let response;
@@ -126,7 +128,11 @@ export default function ContactPage() {
 
     return (
         <>
-            <title>Contact Us - Patel Heating</title>
+            <Helmet>
+                <title>Contact Us - Patel Heating & Air Conditioning | 24/7 HVAC Service</title>
+                <meta name="description" content="Contact Patel Heating & Air Conditioning for professional HVAC services in Brampton and the GTA. 24/7 emergency support available. Call or message us today!" />
+                <meta name="keywords" content="contact Patel Heating, HVAC Brampton phone number, emergency heating repair, air conditioning contact" />
+            </Helmet>
             <div style={{
                 fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
                 backgroundColor: "#fff",
@@ -269,16 +275,16 @@ export default function ContactPage() {
                                 </h2>
                             </div>
 
-                            <p style={{
+                            {/* <p style={{
                                 fontSize: 15,
                                 color: "#6b7280",
                                 marginBottom: 30,
                                 lineHeight: 1.6
                             }}>
                                 Fill out the form below to send us an email directly.
-                            </p>
+                            </p> */}
 
-                            {status === 'success' && (
+                            {/* {status === 'success' && (
                                 <div style={{
                                     padding: '15px',
                                     backgroundColor: '#d1fae5',
@@ -290,9 +296,9 @@ export default function ContactPage() {
                                 }}>
                                     Your message has been sent successfully!
                                 </div>
-                            )}
+                            )} */}
 
-                            {status === 'error' && (
+                            {/* {status === 'error' && (
                                 <div style={{
                                     padding: '15px',
                                     backgroundColor: '#fee2e2',
@@ -304,7 +310,7 @@ export default function ContactPage() {
                                 }}>
                                     Failed to send message. Please try again or contact us via phone.
                                 </div>
-                            )}
+                            )} */}
 
                             <form onSubmit={handleSubmit} style={{ display: "grid", gap: 20 }}>
                                 <div>
@@ -453,7 +459,7 @@ export default function ContactPage() {
                                     />
                                 </div>
 
-                                <button
+                                {/* <button
                                     type="submit"
                                     disabled={status === 'loading'}
                                     style={{
@@ -492,7 +498,7 @@ export default function ContactPage() {
 
                                 <div style={{ textAlign: 'center', marginTop: '10px' }}>
                                     <span style={{ color: '#6b7280', fontSize: '14px' }}>OR</span>
-                                </div>
+                                </div> */}
 
                                 <button
                                     type="button"

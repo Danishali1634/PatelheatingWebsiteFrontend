@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import { Flame, Snowflake, Droplets, Wifi, Wind, Zap, RefreshCw, Thermometer, ShieldCheck, Activity } from 'lucide-react';
 import './Services.css';
 
@@ -56,7 +57,7 @@ const servicesData = [
     {
         id: 8,
         title: 'Gas Line',
-        desc: 'Certified gas line installation for appliances and BBQs.',
+        desc: 'Certified gas line installation for appliances.',
         icon: <Flame size={40} />, // Reusing Flame or could use a different icon if available
         path: '/services/gas-line'
     },
@@ -83,7 +84,7 @@ const servicesData = [
     },
     {
         id: 12,
-        title: 'Combi Boiler System',
+        title: 'Combie Boiler System',
         desc: 'Efficient hybrid heating and hot water for small homes.',
         icon: <Droplets size={40} />,
         path: '/services/combi-boiler'
@@ -93,7 +94,11 @@ const servicesData = [
 const Services = () => {
     return (
         <>
-            <title>Our Services - Patel Heating & Air Conditioning</title>
+            <Helmet>
+                <title>Our HVAC Services Brampton | Heating & Cooling Solutions</title>
+                <meta name="description" content="Explore our wide range of HVAC services including furnace repair, AC installation, heat pumps, tankless water heaters, and more in Brampton & GTA." />
+                <meta name="keywords" content="HVAC services Brampton, heating repair, cooling installation, water heater service, gas line fitting, Patel Heating services" />
+            </Helmet>
             <section className="section-padding bg-section-alt">
                 <div className="container">
                     <div className="text-center mb-5">

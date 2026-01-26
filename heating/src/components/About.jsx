@@ -1,6 +1,6 @@
 import React from 'react';
 import './About.css';
-import hvacServiceman from '../assets/hvacServiceman.png'
+import hvacServiceman from '../assets/hvacServiceman.jpg'
 
 const About = () => (
     <section className="section-padding about-section">
@@ -26,9 +26,9 @@ const About = () => (
                 </div>
                 <div className="col-image about-image-wrapper">
                     <img
-                        // src="https://images.unsplash.com/photo-1621905251189-08b9bfd8f520?q=80&w=2000&auto=format&fit=crop"
                         src={hvacServiceman}
                         alt="HVAC Technician"
+                        loading="lazy"
                         className="about-image" />
                     <div className="exp-badge">
                         <span className="years">10+</span>

@@ -1,13 +1,21 @@
 import React from "react";
 import { CheckCircle, Zap, ShieldCheck, ArrowRight, Calendar, Droplets } from "lucide-react";
 import { Link } from "react-router-dom";
-import combi1 from '../assets/WhatsApp Image 2026-01-18 at 19.13.31.jpeg';
-import combi2 from '../assets/WhatsApp Image 2026-01-18 at 19.13.30.jpeg';
+import { Helmet } from "react-helmet";
+// import combi1 from '../assets/WhatsApp Image 2026-01-18 at 19.13.31.jpeg';
+// import combi2 from '../assets/WhatsApp Image 2026-01-18 at 19.13.30.jpeg';
+import OptimizedImage from "./OptimizedImage";
+import newCombie from '../assets/newCombie.png'
+// /Users/danishakhtar/Desktop/live-web/heating/src/assets/newCombie.png
 
 export default function CombiBoiler() {
     return (
         <div style={{ fontFamily: "Inter, sans-serif", color: "#0d0d0d" }}>
-            <title>Combie Boiler System - Patel Heating & Air Conditioning</title>
+            <Helmet>
+                <title>High-Efficiency Combi Boiler Systems Brampton | Patel Heating</title>
+                <meta name="description" content="Save space and energy with a combination boiler system. Whole-home heating and on-demand hot water in one compact unit. Licensed boiler installation in Brampton." />
+                <meta name="keywords" content="combi boiler Brampton, combination boiler installation, hydronic heating, space saving boiler, Patel Heating boilers" />
+            </Helmet>
 
             {/* Custom Hero Section */}
             <div style={{
@@ -78,13 +86,14 @@ export default function CombiBoiler() {
                     </div>
 
                     <div className="combi-hero-img" style={{ position: "relative" }}>
-                        <img
-                            src={combi1}
+                        <OptimizedImage
+                            src={newCombie}
                             alt="Combie Boiler System unit"
                             style={{
-                                width: "100%", maxHeight: "500px", objectFit: "contain", borderRadius: "24px",
+                                width: "100%", maxHeight: "500px", borderRadius: "24px",
                                 boxShadow: "0 25px 50px -12px rgba(251, 146, 60, 0.25)",
-                                zIndex: 1, position: "relative"
+                                zIndex: 1, position: "relative",
+                                objectFit: "contain"
                             }}
                         />
                         <div style={{
@@ -121,25 +130,26 @@ export default function CombiBoiler() {
                             Ultimate System Efficiency
                         </div>
                         <h2 style={{ fontSize: "clamp(32px, 5vw, 42px)", fontWeight: 900, marginBottom: 32, lineHeight: 1.1, color: "#451a03" }}>
-                            Space-Saving Power <br /> & Pure Comfort
+                            Energy Efficiency <br /> & Pure Comfort
                         </h2>
                         <p style={{ fontSize: 18, color: "#44403c", lineHeight: 1.7, marginBottom: 40, maxWidth: 500 }}>
-                            Perfect for modern homes, the Combi Boiler provides both whole-home heating and on-demand hot water in one compact, high-efficiency unit.
+                            Home heating and a small draw on DHW system. Priority system temperature controlled by zones with 10-1 Modulation.
                         </p>
 
-                        <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 24 }}>
+                        <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 16 }}>
                             {[
-                                { title: "Dual Functionality", desc: "Combines high-efficiency space heating and domestic hot water." },
-                                { title: "95% AFUE Rating", desc: "Industry-leading efficiency that significantly lowers utility bills." },
-                                { title: "Compact Design", desc: "Wall-mounted system that reclaims basement or utility room space." }
+                                { title: "Single stainless steel burner", desc: "Condensing burner efficiency for maximum heat transfer." },
+                                { title: "ECM motor savings", desc: "Significant electricity savings with advanced motor technology." },
+                                { title: "Zone control", desc: "Priority system temperature controlled precisely by zones." },
+                                { title: "10-1 Modulation", desc: "Wide modulation range for perfectly balanced heating demand." }
                             ].map((item, i) => (
                                 <li key={i} style={{ display: "flex", gap: 20, alignItems: "flex-start" }}>
-                                    <div style={{ width: 44, height: 44, borderRadius: 12, background: "rgba(255, 114, 22, 0.08)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                                        <Zap size={22} color="#ff7216" />
+                                    <div style={{ width: 36, height: 36, borderRadius: 10, background: "rgba(255, 114, 22, 0.08)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                                        <Zap size={18} color="#ff7216" />
                                     </div>
                                     <div>
-                                        <h4 style={{ fontSize: 18, fontWeight: 700, color: "#451a03", marginBottom: 6 }}>{item.title}</h4>
-                                        <p style={{ color: "#64748b", margin: 0, fontSize: 15 }}>{item.desc}</p>
+                                        <h4 style={{ fontSize: 16, fontWeight: 700, color: "#451a03", marginBottom: 4 }}>{item.title}</h4>
+                                        <p style={{ color: "#64748b", margin: 0, fontSize: 14 }}>{item.desc}</p>
                                     </div>
                                 </li>
                             ))}
@@ -149,14 +159,14 @@ export default function CombiBoiler() {
                     {/* Image Side */}
                     <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
                         <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
-                            <img
-                                src={combi2}
-                                alt="Professional Combi Boiler Installation"
+                            <OptimizedImage
+                                src={newCombie}
+                                alt="Professional Combie Boiler Installation"
                                 style={{
                                     width: "100%",
                                     height: "100%",
-                                    objectFit: "contain",
-                                    display: "block"
+                                    display: "block",
+                                    objectFit: "contain"
                                 }}
                             />
                             <div style={{
@@ -177,7 +187,7 @@ export default function CombiBoiler() {
                         <div style={{ padding: "40px 60px", background: "#fff", borderTop: "1px solid #f1f5f9", display: "flex", flexDirection: "column", gap: 20 }}>
                             <div>
                                 <span style={{ fontSize: 13, textTransform: "uppercase", letterSpacing: 1.5, fontWeight: 700, color: "#94a3b8" }}>Featured System</span>
-                                <h3 style={{ fontSize: 24, fontWeight: 800, color: "#ff7216", margin: "8px 0 0" }}>Glow Brand™ Combi</h3>
+                                <h3 style={{ fontSize: 24, fontWeight: 800, color: "#ff7216", margin: "8px 0 0" }}>Glow Brand™ Combie</h3>
                             </div>
                             <div style={{
                                 display: "inline-flex", alignItems: "center", gap: 12, padding: "12px 24px",
@@ -191,10 +201,38 @@ export default function CombiBoiler() {
                 </div>
             </div>
 
+            {/* Flexibility Section */}
+            <div style={{ padding: "80px 20px", background: "#fff" }}>
+                <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+                    <div style={{ textAlign: "center", marginBottom: 60 }}>
+                        <div style={{ color: "#ff7216", fontWeight: 700, letterSpacing: 2, marginBottom: 16, fontSize: 14, textTransform: "uppercase" }}>
+                            Ultimate Flexibility
+                        </div>
+                        <h2 style={{ fontSize: "clamp(32px, 5vw, 42px)", fontWeight: 900, color: "#451a03" }}>Versatile System Configurations</h2>
+                    </div>
+
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 30 }}>
+                        {[
+                            { title: "Multiple Configurations", desc: "Supports various applications and specialized setups for any home." },
+                            { title: "Range of Products", desc: "Meeting diverse heating and DHW demands with precision." },
+                            { title: "Space Optimization", desc: "Various installation options to minimize space requirements." },
+                            { title: "Separate Streams", desc: "Dedicated water streams for each component ensuring pure efficiency." },
+                            { title: "Built-in Components", desc: "Includes high-quality built-in expansion tank and pump." }
+                        ].map((item, i) => (
+                            <div key={i} style={{ padding: 30, background: "#f8fafc", borderRadius: 24, border: "1px solid #e2e8f0" }}>
+                                <div style={{ color: "#ff7216", marginBottom: 16 }}><ShieldCheck size={24} /></div>
+                                <h4 style={{ fontSize: 20, fontWeight: 800, color: "#451a03", marginBottom: 12 }}>{item.title}</h4>
+                                <p style={{ color: "#64748b", fontSize: 16, lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
             {/* CTA Section */}
             <section style={{ padding: "60px 20px", background: "#f97316", textAlign: "center", borderRadius: "40px", margin: "0 20px 40px" }}>
                 <div style={{ maxWidth: 800, margin: "0 auto", color: "#fff" }}>
-                    <h2 style={{ fontSize: clamp(28, 4, 42), fontWeight: 900, marginBottom: 20 }}>Ready for Maximum Efficiency?</h2>
+                    <h2 style={{ fontSize: "clamp(28px, 4vw, 42px)", fontWeight: 900, marginBottom: 20 }}>Ready for Maximum Efficiency?</h2>
                     <p style={{ fontSize: 18, opacity: 0.9, marginBottom: 35 }}>Our experts can help you choose the right Combi Boiler System for your home.</p>
                     <Link to="/contact" style={{
                         display: "inline-flex", alignItems: "center", gap: 12,
@@ -208,11 +246,6 @@ export default function CombiBoiler() {
                 </div>
             </section>
 
-            <style>{`
-                @function clamp($min, $val, $max) {
-                    @return max($min, min($val, $max));
-                }
-            `}</style>
         </div>
     );
 }

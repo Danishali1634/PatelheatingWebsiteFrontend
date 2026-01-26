@@ -1,14 +1,20 @@
 import React from "react";
 import { Wind, ArrowLeftRight, Leaf, ShieldCheck, ArrowRight, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import hrvimage from "../assets/hrvimage.png";
+import OptimizedImage from "./OptimizedImage";
 
 
 
 export default function Hrv() {
     return (
         <>
-            <title>HRV Systems - Patel Heating & Air Conditioning</title>
+            <Helmet>
+                <title>HRV System Installation Brampton | Fresh Air Ventilation</title>
+                <meta name="description" content="Improve indoor air quality with Heat Recovery Ventilation (HRV). Fresh outdoor air without heat loss. Professional HRV installation and service in Brampton." />
+                <meta name="keywords" content="HRV system Brampton, heat recovery ventilation, fresh air exchange, indoor air quality, Patel Heating HRV" />
+            </Helmet>
             <div style={{ fontFamily: "Inter, sans-serif", color: "#0d0d0d" }}>
 
                 {/* Custom Hero: Nature/Freshness */}
@@ -61,13 +67,14 @@ export default function Hrv() {
                         </div>
 
                         <div className="hrv-hero-img" style={{ position: "relative" }}>
-                            <img
+                            <OptimizedImage
                                 src={hrvimage}
                                 alt="Modern HRV System"
                                 style={{
-                                    width: "100%", maxHeight: "400px", objectFit: "contain", borderRadius: "30px 30px 0 30px",
+                                    width: "100%", maxHeight: "400px", borderRadius: "30px 30px 0 30px",
                                     boxShadow: "0 30px 60px -20px rgba(22, 163, 74, 0.25)",
-                                    zIndex: 1, position: "relative"
+                                    zIndex: 1, position: "relative",
+                                    objectFit: "contain"
                                 }}
                             />
                             {/* Floating Glass Card */}
@@ -136,14 +143,14 @@ export default function Hrv() {
                         {/* Image Side */}
                         <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
                             <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
-                                <img
+                                <OptimizedImage
                                     src={hrvimage}
                                     alt="Professional HRV System"
                                     style={{
                                         width: "100%",
                                         height: "100%",
-                                        objectFit: "contain",
-                                        display: "block"
+                                        display: "block",
+                                        objectFit: "contain"
                                     }}
                                 />
                                 <div style={{

@@ -1,14 +1,20 @@
 import React from "react";
 import { Droplets, TrendingDown, Clock, ArrowRight, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 // import tankless from '../assets/tankless.png'
 import tankless from '../assets/tenkless.png'
+import OptimizedImage from "./OptimizedImage";
 
 
 export default function TanklessWaterHeater() {
     return (
         <>
-            <title>Tankless Water Heaters - Patel Heating & Air Conditioning</title>
+            <Helmet>
+                <title>Tankless Water Heater Installation Brampton | Patel Heating</title>
+                <meta name="description" content="Get endless hot water with our professional tankless water heater installation and service in Brampton. Energy-efficient solutions for modern homes." />
+                <meta name="keywords" content="tankless water heater Brampton, on-demand hot water, Rinnai tankless installation, Patel Heating water heaters" />
+            </Helmet>
             <div style={{ fontFamily: "Inter, sans-serif", color: "#0d0d0d" }}>
 
                 {/* Custom Hero: Clean Water Theme */}
@@ -60,13 +66,14 @@ export default function TanklessWaterHeater() {
                         </div>
 
                         <div className="tankless-hero-img" style={{ position: "relative" }}>
-                            <img
+                            <OptimizedImage
                                 src={tankless}
                                 alt="Modern Tankless Water Heater"
                                 style={{
-                                    width: "100%", maxHeight: "500px", objectFit: "contain", borderRadius: "30px",
+                                    width: "100%", maxHeight: "500px", borderRadius: "30px",
                                     boxShadow: "0 30px 60px -20px rgba(14, 165, 233, 0.25)",
-                                    zIndex: 1, position: "relative"
+                                    zIndex: 1, position: "relative",
+                                    objectFit: "contain"
                                 }}
                             />
                             {/* Floating Glass Card */}
@@ -135,14 +142,14 @@ export default function TanklessWaterHeater() {
                         {/* Image Side */}
                         <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
                             <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
-                                <img
+                                <OptimizedImage
                                     src={tankless}
                                     alt="Professional Tankless System"
                                     style={{
                                         width: "100%",
                                         height: "100%",
-                                        objectFit: "contain",
-                                        display: "block"
+                                        display: "block",
+                                        objectFit: "contain"
                                     }}
                                 />
                                 <div style={{

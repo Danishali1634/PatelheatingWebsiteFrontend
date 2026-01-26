@@ -1,7 +1,8 @@
 import React from "react";
-import { Award, Users, Heart, Shield, Clock, ThumbsUp, Zap, Target, CheckCircle, Phone, MapPin } from "lucide-react";
+import { Award, Users, Heart, Shield, Clock, ThumbsUp, Zap, Target, CheckCircle, Phone, MapPin, Facebook, Instagram } from "lucide-react";
 import brandLogo from "../assets/brandLogo.png";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export default function AboutPage() {
     const orange = "#ff7216";
@@ -67,7 +68,11 @@ export default function AboutPage() {
 
     return (
         <>
-            <title>About Us - Patel Heating & Air Conditioning</title>
+            <Helmet>
+                <title>About Us - Patel Heating & Air Conditioning</title>
+                <meta name="description" content="Learn about Patel Heating & Air Conditioning, your trusted HVAC experts in Brampton and the GTA for over 15 years. Specialized in residential heating and cooling solutions." />
+                <meta name="keywords" content="HVAC experts Brampton, heating and cooling company, about Patel Heating, local HVAC services" />
+            </Helmet>
             <div style={{
                 fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
                 backgroundColor: "#fff",
@@ -125,7 +130,7 @@ export default function AboutPage() {
                                 Serving Brampton and surrounding areas with reliable HVAC solutions for over 15 years. Your comfort is our commitment.
                             </p>
 
-                            <div style={{ display: "flex", gap: 24, flexWrap: "wrap", marginBottom: 30, justifyContent: "inherit" }}>
+                            <div style={{ display: "flex", gap: 24, flexWrap: "wrap", marginBottom: 20, justifyContent: "inherit" }}>
                                 <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                                     <Phone size={20} color={orange} />
                                     <span style={{ fontSize: 18, fontWeight: 700 }}>+1 (647) 984-7874</span>
@@ -134,6 +139,22 @@ export default function AboutPage() {
                                     <MapPin size={20} color={orange} />
                                     <span style={{ fontSize: 18, fontWeight: 700 }}>Brampton, ON</span>
                                 </div>
+                            </div>
+                            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 30 }} className="about-socials">
+                                <a href="https://www.facebook.com/PatelHVAC/?ref=1" target="_blank" rel="noopener noreferrer" style={{
+                                    display: "flex", alignItems: "center", justifyContent: "center",
+                                    width: 44, height: 44, borderRadius: 10, border: `1px solid ${orange}`,
+                                    color: orange, transition: "all 0.3s ease"
+                                }} onMouseEnter={(e) => { e.currentTarget.style.background = orange; e.currentTarget.style.color = "#fff"; }} onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = orange; }}>
+                                    <Facebook size={22} />
+                                </a>
+                                <a href="https://www.instagram.com/patel_heating_air_conditioning/" target="_blank" rel="noopener noreferrer" style={{
+                                    display: "flex", alignItems: "center", justifyContent: "center",
+                                    width: 44, height: 44, borderRadius: 10, border: `1px solid ${orange}`,
+                                    color: orange, transition: "all 0.3s ease"
+                                }} onMouseEnter={(e) => { e.currentTarget.style.background = orange; e.currentTarget.style.color = "#fff"; }} onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = orange; }}>
+                                    <Instagram size={22} />
+                                </a>
                             </div>
                         </div>
 
@@ -147,6 +168,7 @@ export default function AboutPage() {
                             <img
                                 src={brandLogo}
                                 alt="Patel Heating & Air Conditioning Logo"
+                                loading="lazy"
                                 style={{
                                     width: "100%",
                                     maxWidth: 450,

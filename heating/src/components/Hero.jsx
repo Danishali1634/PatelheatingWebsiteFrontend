@@ -1,7 +1,7 @@
 
 import WorkDuring from '../assets/workDuring.mp4'
 import heroNew from '../assets/heroSectionNew.webp'
-import heroMobile from '../assets/herotwo.png'
+import heroMobile from '../assets/herotwo.jpg'
 import React from 'react';
 import { Phone } from 'lucide-react';
 
@@ -72,6 +72,8 @@ const PremiumHero = () => {
                                 autoPlay
                                 loop
                                 muted
+                                preload="none"
+                                poster={heroNew}
                                 src={WorkDuring}
                                 title="PATEL Heating & Air Conditioning"
                             />

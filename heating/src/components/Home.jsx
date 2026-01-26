@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import Hero from './Hero';
 import About from './About';
 import Services from './Services';
@@ -9,7 +10,11 @@ import Blogs from './Blogs';
 const Home = () => {
     return (
         <>
-            <title>Patel Heating & Air Conditioning - Home</title>
+            <Helmet>
+                <title>Patel Heating & Air Conditioning - HVAC Services in Brampton & GTA</title>
+                <meta name="description" content="Professional HVAC services in Brampton, Mississauga, and the GTA. Specialized in furnace installation, heat pumps, AC repair, and tankless water heaters." />
+                <meta name="keywords" content="HVAC Brampton, furnace repair, air conditioning installation, heat pumps GTA, Patel Heating" />
+            </Helmet>
             <Hero />
             <About />
             <Services />

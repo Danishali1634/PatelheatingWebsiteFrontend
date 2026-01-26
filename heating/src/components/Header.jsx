@@ -45,17 +45,13 @@ const Header = () => {
                         <div className="contact-info">
                             <div className="contact-item">
                                 <FaPhoneAlt className="icon-white" />
-                                <span style={{ fontSize: 20 }}>+1 (647) 984-7874</span>
+                                <span style={{ fontSize: 20, fontWeight: 800 }}>+1 (647) 984-7874</span>
                             </div>
                             <div className="contact-item">
                                 <FaMapMarkerAlt className="icon-white" />
-                                <span style={{ fontSize: 20 }}>142 Thornbush Blvd, Brampton, ON</span>
+                                <span style={{ fontSize: 20, fontWeight: 800 }}>info@patelheating.com</span>
                             </div>
                         </div>
-                        {/* Theme Toggle in Top Bar for access */}
-                        <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle Theme">
-                            {theme === 'light' ? <FaMoon /> : <FaSun />}
-                        </button>
                     </div>
                 </div>
             </div>
@@ -88,7 +84,7 @@ const Header = () => {
                                 <li><NavLink to="/services/air-handler">Air Handler</NavLink></li>
 
                                 <div className="dropdown-section-header">Water Solutions</div>
-                                <li><NavLink to="/services/combi-boiler">Combi Boiler System</NavLink></li>
+                                <li><NavLink to="/services/combi-boiler">Combie Boiler System</NavLink></li>
                                 <li><NavLink to="/services/tankless-water-heater">Tankless Water Heater</NavLink></li>
                                 <li><NavLink to="/services/hot-water-tank">Hot Water Tank</NavLink></li>
 
@@ -96,6 +92,10 @@ const Header = () => {
                                 <li><NavLink to="/services/humidifier">Humidifier</NavLink></li>
                                 <li><NavLink to="/services/hrv">HRV (Heat Recovery)</NavLink></li>
                                 <li><NavLink to="/services/erv">ERV (Energy Recovery)</NavLink></li>
+
+                                <div className="dropdown-section-header">Support & Other</div>
+                                <li><NavLink to="/services/gas-line">Gas Line</NavLink></li>
+                                <li><NavLink to="/services/thermostat">Thermostat</NavLink></li>
                             </ul>
                         </li>
                         <li><NavLink to="/reviews" className={({ isActive }) => (isActive ? 'active-link' : '')}>Reviews</NavLink></li>
@@ -124,9 +124,9 @@ const Header = () => {
                 <ul className="mobile-links">
                     <div style={{ position: 'absolute', top: 10, right: 10 }} title='Close' onClick={toggleMobileMenu}><AiOutlineCloseCircle color='#ff7216' size={40} /></div>
                     <span className='' />
-                    <li className="theme-toggle-mobile" onClick={toggleTheme}>
+                    {/* <li className="theme-toggle-mobile" onClick={toggleTheme}>
                         {theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode'} {theme === 'light' ? <FaMoon /> : <FaSun />}
-                    </li>
+                    </li> */}
                     <li onClick={toggleMobileMenu}><NavLink to="/" end>Home</NavLink></li>
 
                     <li className="mobile-dropdown-header">Our Services</li>
@@ -141,7 +141,7 @@ const Header = () => {
 
                     <div className="mobile-service-category">
                         <span className="category-label">Water Solutions</span>
-                        <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/combi-boiler">Combi Boiler System</NavLink></li>
+                        <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/combi-boiler">Combie Boiler System</NavLink></li>
                         <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/tankless-water-heater">Tankless Water Heater</NavLink></li>
                         <li onClick={toggleMobileMenu} className="sub-link"><NavLink to="/services/hot-water-tank">Hot Water Tank</NavLink></li>
                     </div>

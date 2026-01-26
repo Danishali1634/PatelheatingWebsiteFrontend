@@ -1,13 +1,19 @@
 import React from "react";
 import { Droplets, Shield, Smile, ArrowRight, Clock, RefreshCw, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import humidifier from '../assets/humidifier.png'
+import OptimizedImage from "./OptimizedImage";
 
 
 export default function Humidifier() {
     return (
         <>
-            <title>Humidifiers - Patel Heating & Air Conditioning</title>
+            <Helmet>
+                <title>Whole-Home Humidifiers Brampton | Better Indoor Air Quality</title>
+                <meta name="description" content="Improve your home's air quality with professional whole-home humidifier installation in Brampton. Protect your health and home from dry winter air." />
+                <meta name="keywords" content="humidifier installation Brampton, whole home humidifier, indoor air quality, Patel Heating humidifiers" />
+            </Helmet>
             <div style={{ fontFamily: "Inter, sans-serif", color: "#0d0d0d" }}>
 
                 {/* Custom Hero: Split Solid Color */}
@@ -60,13 +66,14 @@ export default function Humidifier() {
                         </div>
 
                         <div className="humidifier-hero-img" style={{ position: "relative" }}>
-                            <img
+                            <OptimizedImage
                                 src={humidifier}
                                 alt="Modern Humidifier"
                                 style={{
-                                    width: "100%", maxHeight: "400px", objectFit: "contain", borderRadius: "30px 30px 0 30px",
+                                    width: "100%", maxHeight: "400px", borderRadius: "30px 30px 0 30px",
                                     boxShadow: "0 30px 60px -20px rgba(0,0,0,0.15)",
-                                    zIndex: 1, position: "relative"
+                                    zIndex: 1, position: "relative",
+                                    objectFit: "contain"
                                 }}
                             />
                             {/* Floating Glass Card */}
@@ -135,14 +142,14 @@ export default function Humidifier() {
                         {/* Image Side */}
                         <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
                             <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
-                                <img
+                                <OptimizedImage
                                     src={humidifier}
                                     alt="Professional Humidifier"
                                     style={{
                                         width: "100%",
                                         height: "100%",
-                                        objectFit: "contain",
-                                        display: "block"
+                                        display: "block",
+                                        objectFit: "contain"
                                     }}
                                 />
                                 <div style={{

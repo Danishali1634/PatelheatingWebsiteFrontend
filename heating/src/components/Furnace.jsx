@@ -1,13 +1,19 @@
 import React from "react";
 import { Flame, ShieldCheck, Zap, Thermometer, ArrowRight, Phone, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import furanceimg from '../assets/furanceimg.png'
+import OptimizedImage from "./OptimizedImage";
 
 
 export default function Furnace() {
     return (
         <>
-            <title>Furnace Services - Patel Heating & Air Conditioning</title>
+            <Helmet>
+                <title>Emergency Furnace Repair & Installation Brampton | Patel Heating</title>
+                <meta name="description" content="Expert furnace installation and repair services in Brampton & the GTA. 24/7 heating support, licensed technicians, and energy-efficient systems." />
+                <meta name="keywords" content="furnace repair Brampton, furnace installation, heating services GTA, emergency furnace repair, high-efficiency furnace" />
+            </Helmet>
             <div style={{ fontFamily: "Inter, sans-serif", color: "#0d0d0d" }}>
 
                 {/* Custom Hero */}
@@ -60,13 +66,14 @@ export default function Furnace() {
                         </div>
 
                         <div className="furnace-hero-img" style={{ position: "relative" }}>
-                            <img
+                            <OptimizedImage
                                 src={furanceimg}
                                 alt="Modern Furnace Unit"
                                 style={{
-                                    width: "100%", maxHeight: "500px", objectFit: "contain", borderRadius: "30px",
+                                    width: "100%", maxHeight: "500px", borderRadius: "30px",
                                     boxShadow: "0 30px 60px -20px rgba(251, 146, 60, 0.25)",
-                                    zIndex: 1, position: "relative"
+                                    zIndex: 1, position: "relative",
+                                    objectFit: "contain"
                                 }}
                             />
                             {/* Floating Glass Card */}
@@ -135,14 +142,14 @@ export default function Furnace() {
                         {/* Image Side */}
                         <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
                             <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
-                                <img
+                                <OptimizedImage
                                     src={furanceimg}
                                     alt="Reliable Heating System"
                                     style={{
                                         width: "100%",
                                         height: "100%",
-                                        objectFit: "contain",
-                                        display: "block"
+                                        display: "block",
+                                        objectFit: "contain"
                                     }}
                                 />
                                 <div style={{

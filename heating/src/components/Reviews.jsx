@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 // Import review images
 import rone from '../assets/reviews/rone.png';
@@ -168,7 +169,11 @@ export default function Reviews() {
                 overflow: "hidden",
                 minHeight: "100vh"
             }}>
-                <title>Customer Reviews - Patel Heating & Air Conditioning</title>
+                <Helmet>
+                    <title>Customer Reviews - Patel Heating & Air Conditioning</title>
+                    <meta name="description" content="Read what our satisfied customers in Brampton and the GTA have to say about our professional heating, cooling, and HVAC services." />
+                    <meta name="keywords" content="Patel Heating reviews, HVAC testimonials Brampton, trusted heating and cooling, customer feedback" />
+                </Helmet>
 
                 {/* Enhanced background decoration */}
                 <div className="background-decoration" style={{

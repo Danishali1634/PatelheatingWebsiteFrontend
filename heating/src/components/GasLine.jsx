@@ -1,13 +1,19 @@
 import React from "react";
 import { Flame, Clock, RefreshCw, ArrowRight, Calendar, Shield, AlertTriangle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import gasline from '../assets/gasline.jpg'
+import OptimizedImage from "./OptimizedImage";
 
 
 export default function GasLine() {
     return (
         <>
-            <title>Gas Line Services - Patel Heating & Air Conditioning</title>
+            <Helmet>
+                <title>Professional Gas Line Installation Brampton | TSSA Certified</title>
+                <meta name="description" content="Certified gas line installation for stoves, pool heaters, and fireplaces in Brampton. TSSA-compliant technicians for safe and reliable gas solutions." />
+                <meta name="keywords" content="gas line installation Brampton, TSSA certified gas fitter, pool heater gas line,gas hookup, Patel Heating" />
+            </Helmet>
             <div style={{ fontFamily: "Inter, sans-serif", color: "#0d0d0d" }}>
 
                 {/* Custom Hero: Split Solid Color */}
@@ -43,9 +49,6 @@ export default function GasLine() {
                                 Safe <span style={{ color: "#ff7216" }}> Gas Line </span><br />
                                 <span style={{ color: "#ff7216" }}>Solutions.</span>
                             </h1>
-                            <p style={{ fontSize: 20, color: "#64748b", marginBottom: 40, lineHeight: 1.6, maxWidth: 550 }}>
-                                Certified technicians for BBQs, stoves, pool heaters, and fireplaces. Safety is our #1 priority.
-                            </p>
                             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
                                 <Link to="/contact" style={{
                                     textDecoration: "none", background: "#ff7216", color: "#fff",
@@ -60,13 +63,14 @@ export default function GasLine() {
                         </div>
 
                         <div className="gasline-hero-img" style={{ position: "relative" }}>
-                            <img
+                            <OptimizedImage
                                 src={gasline}
                                 alt="Gas Line Professional Installation"
                                 style={{
-                                    width: "100%", maxHeight: "400px", objectFit: "contain", borderRadius: "30px 30px 0 30px",
+                                    width: "100%", maxHeight: "400px", borderRadius: "30px 30px 0 30px",
                                     boxShadow: "0 30px 60px -20px rgba(234, 88, 12, 0.25)",
-                                    zIndex: 1, position: "relative"
+                                    zIndex: 1, position: "relative",
+                                    objectFit: "contain"
                                 }}
                             />
                             {/* Floating Glass Card */}
@@ -107,17 +111,17 @@ export default function GasLine() {
                                 Professional Gas Services
                             </div>
                             <h2 style={{ fontSize: "clamp(32px, 5vw, 42px)", fontWeight: 900, marginBottom: 32, lineHeight: 1.1, color: "#431407" }}>
-                                Safe & Certified <br /> Gas Line Solutions
+                                Our Gas Line <br /> Services
                             </h2>
                             <p style={{ fontSize: 18, color: "#44403c", lineHeight: 1.7, marginBottom: 40, maxWidth: 500 }}>
-                                Safety is our number one priority. Our TSSA-certified technicians ensure every gas line installation and repair is perfectly compliant.
+                                Planning a home renovation or adding a new gas appliance? We offer custom gas line installations for both residences.
                             </p>
 
                             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 24 }}>
                                 {[
-                                    { title: "Licensed Experts", desc: "TSSA certified technicians for complete peace of mind." },
-                                    { title: "Leak Detection", desc: "Advanced electronic sensors to find even the smallest leaks." },
-                                    { title: "Full Compliance", desc: "Strict adherence to all Ontario gas codes and regulations." }
+                                    { title: "New Gas Line Installation", desc: "Expert assessment, safe routing, and code-approved materials for your home appliances." },
+                                    { title: "Gas Line Repair & Leak Detection", desc: "Safety-first leak detection and rapid repairs using advanced sensor technology." },
+                                    { title: "Maintenance & Inspection", desc: "Annual checks including pressure testing and safety compliance certification." }
                                 ].map((item, i) => (
                                     <li key={i} style={{ display: "flex", gap: 20, alignItems: "flex-start" }}>
                                         <div style={{ width: 44, height: 44, borderRadius: 12, background: "rgba(255, 114, 22, 0.08)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
@@ -135,14 +139,14 @@ export default function GasLine() {
                         {/* Image Side */}
                         <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
                             <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
-                                <img
+                                <OptimizedImage
                                     src={gasline}
                                     alt="Gas Line Installation"
                                     style={{
                                         width: "100%",
                                         height: "100%",
-                                        objectFit: "contain",
-                                        display: "block"
+                                        display: "block",
+                                        objectFit: "contain"
                                     }}
                                 />
                                 <div style={{
@@ -177,11 +181,64 @@ export default function GasLine() {
                     </div>
                 </div>
 
+                {/* Detailed Sections */}
+                <div style={{ padding: "0 20px 100px", background: "#fff" }}>
+                    <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 40 }}>
+
+                        {/* Installation */}
+                        <div style={{ padding: 40, background: "#f8fafc", borderRadius: 24, border: "1px solid #e2e8f0" }}>
+                            <h3 style={{ fontSize: 24, fontWeight: 800, marginBottom: 20, color: "#431407" }}>Professional Installation</h3>
+                            <p style={{ color: "#64748b", lineHeight: 1.6, marginBottom: 24 }}>Our experts will assess your property's gas requirements and design the safest, most efficient route using code-approved materials.</p>
+                            <ul style={{ padding: 0, listStyle: "none", display: "grid", gap: 12 }}>
+                                {["Property Assessment", "Safe Route Design", "Code-Approved Materials", "Leak & Safety Testing"].map((item, i) => (
+                                    <li key={i} style={{ display: "flex", alignItems: "center", gap: 12, color: "#44403c" }}>
+                                        <div style={{ color: "#ff7216" }}><Shield size={16} /></div>
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Emergency / Repair */}
+                        <div style={{ padding: 40, background: "#fef2f2", borderRadius: 24, border: "1px solid #fee2e2" }}>
+                            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
+                                <AlertTriangle color="#dc2626" size={24} />
+                                <h3 style={{ fontSize: 24, fontWeight: 800, color: "#991b1b", margin: 0 }}>Emergency & Repair</h3>
+                            </div>
+                            <p style={{ color: "#991b1b", fontWeight: 700, marginBottom: 16 }}>If you suspect a gas leak—don't wait. Evacuate the area and call your utility provider or 911 immediately.</p>
+                            <h4 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: "#431407" }}>Common Warning Signs:</h4>
+                            <ul style={{ padding: 0, listStyle: "none", display: "grid", gap: 8 }}>
+                                {["Sulfur / Rotten Egg Smell", "Hissing Near Gas Lines", "Sharp Rise in Gas Bills", "Dead Outdoor Plants", "Unexplained Nausea"].map((item, i) => (
+                                    <li key={i} style={{ display: "flex", alignItems: "center", gap: 12, color: "#44403c", fontSize: 14 }}>
+                                        <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#dc2626" }}></div>
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Maintenance */}
+                        <div style={{ padding: 40, background: "#f8fafc", borderRadius: 24, border: "1px solid #e2e8f0" }}>
+                            <h3 style={{ fontSize: 24, fontWeight: 800, marginBottom: 20, color: "#431407" }}>Maintenance & Inspection</h3>
+                            <p style={{ color: "#64748b", lineHeight: 1.6, marginBottom: 24 }}>An annual professional gas line check ensures your home's safety and energy efficiency. Prevent leaks before they start.</p>
+                            <ul style={{ padding: 0, listStyle: "none", display: "grid", gap: 12 }}>
+                                {["Pressure Testing", "Leak Inspection", "Valve & Fitting Checks", "Compliance Certification"].map((item, i) => (
+                                    <li key={i} style={{ display: "flex", alignItems: "center", gap: 12, color: "#44403c" }}>
+                                        <div style={{ color: "#ff7216" }}><RefreshCw size={16} /></div>
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
                 {/* CTA */}
-                <div style={{ padding: "60px 20px", background: "#fff", textAlign: "center" }}>
-                    <div style={{ maxWidth: 800, margin: "0 auto" }}>
+                <div style={{ padding: "60px 20px", background: "#f8fafc", textAlign: "center" }}>
+                    <div style={{ maxWidth: 800, margin: "0 auto", padding: "60px 20px", background: "#fff", borderRadius: 32, boxShadow: "0 20px 40px rgba(0,0,0,0.05)" }}>
                         <h2 style={{ fontSize: "36px", fontWeight: 800, marginBottom: 24, color: '#ff7216' }}>Don't take chances with gas.</h2>
-                        <p style={{ fontSize: 18, color: "#64748b", marginBottom: 40 }}>Schedule a professional gas line inspection or installation today.</p>
+                        <p style={{ fontSize: 18, color: "#64748b", marginBottom: 40 }}>Schedule a professional gas line inspection or installation today with our TSSA licensed experts.</p>
                         <Link to="/contact" style={{
                             display: "inline-flex", alignItems: "center", gap: 12,
                             textDecoration: "none", background: "#ff7216", color: "#fff",

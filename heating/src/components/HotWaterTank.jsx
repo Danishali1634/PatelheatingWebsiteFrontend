@@ -1,13 +1,19 @@
 import React from "react";
 import { Flame, Clock, RefreshCw, ArrowRight, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import watertank from '../assets/watertank.png'
+import OptimizedImage from "./OptimizedImage";
 
 
 export default function HotWaterTank() {
     return (
         <>
-            <title>Hot Water Tanks - Patel Heating & Air Conditioning</title>
+            <Helmet>
+                <title>Hot Water Tank Installation Brampton | 24/7 Service</title>
+                <meta name="description" content="Reliable hot water tank installation and repair in Brampton. High-efficiency tanks for large families, fast recovery, and professional HVAC service." />
+                <meta name="keywords" content="hot water tank Brampton, water heater repair, Rheem water heater, Patel Heating water tanks" />
+            </Helmet>
             <div style={{ fontFamily: "Inter, sans-serif", color: "#0d0d0d" }}>
 
                 {/* Custom Hero: Split Solid Color */}
@@ -60,13 +66,14 @@ export default function HotWaterTank() {
                         </div>
 
                         <div className="watertank-hero-img" style={{ position: "relative" }}>
-                            <img
+                            <OptimizedImage
                                 src={watertank}
                                 alt="Modern Hot Water Tank"
                                 style={{
-                                    width: "100%", maxHeight: "400px", objectFit: "contain", borderRadius: "30px 30px 0 30px",
+                                    width: "100%", maxHeight: "400px", borderRadius: "30px 30px 0 30px",
                                     boxShadow: "0 30px 60px -20px rgba(14, 165, 233, 0.25)",
-                                    zIndex: 1, position: "relative"
+                                    zIndex: 1, position: "relative",
+                                    objectFit: "contain"
                                 }}
                             />
                             {/* Floating Glass Card */}
@@ -135,14 +142,14 @@ export default function HotWaterTank() {
                         {/* Image Side */}
                         <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
                             <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
-                                <img
+                                <OptimizedImage
                                     src={watertank}
                                     alt="Professional Hot Water Tank"
                                     style={{
                                         width: "100%",
                                         height: "100%",
-                                        objectFit: "contain",
-                                        display: "block"
+                                        display: "block",
+                                        objectFit: "contain"
                                     }}
                                 />
                                 <div style={{

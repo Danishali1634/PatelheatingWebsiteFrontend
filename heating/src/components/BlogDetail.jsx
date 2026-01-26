@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Calendar, User, ArrowLeft, Loader2, Facebook, Instagram } from "lucide-react";
+import { Helmet } from "react-helmet";
 
 export default function BlogDetail() {
     const { id } = useParams();
@@ -59,7 +60,10 @@ export default function BlogDetail() {
 
     return (
         <>
-            <title>{blog.title.rendered} - Patel Heating & Air Conditioning</title>
+            <Helmet>
+                <title>{blog.title.rendered} - Patel Heating & Air Conditioning</title>
+                <meta name="description" content={blog.excerpt?.rendered?.replace(/<[^>]*>?/gm, '').substring(0, 160)} />
+            </Helmet>
 
             <div
                 style={{
@@ -145,6 +149,7 @@ export default function BlogDetail() {
                                 "https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?w=1200"
                             }
                             alt={blog.title.rendered}
+                            loading="lazy"
                             style={{
                                 width: "100%",
                                 height: "auto",

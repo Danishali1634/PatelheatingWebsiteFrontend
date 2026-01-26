@@ -1,13 +1,19 @@
 import React from "react";
 import { Smartphone, PieChart, Wifi, ArrowRight, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import thermostast from '../assets/thermostast.png'
+import OptimizedImage from "./OptimizedImage";
 
 
 export default function Thermostat() {
     return (
         <>
-            <title>Thermostats & Controls - Patel Heating & Air Conditioning</title>
+            <Helmet>
+                <title>Smart Thermostat Installation Brampton | Remote HVAC Control</title>
+                <meta name="description" content="Upgrade to a smart thermostat for better energy savings and remote HVAC control. Professional installation of Nest, Ecobee, and more in Brampton." />
+                <meta name="keywords" content="smart thermostat Brampton, Nest installation, Ecobee thermostat service, HVAC controls Brampton, Patel Heating" />
+            </Helmet>
             <div style={{ fontFamily: "Inter, sans-serif", color: "#0d0d0d" }}>
 
                 {/* Custom Hero: Smart Control */}
@@ -59,13 +65,14 @@ export default function Thermostat() {
                         </div>
 
                         <div className="thermostat-hero-img" style={{ position: "relative" }}>
-                            <img
+                            <OptimizedImage
                                 src={thermostast}
                                 alt="Smart Thermostat Interface"
                                 style={{
-                                    width: "100%", maxHeight: "400px", objectFit: "contain", borderRadius: "30px 30px 0 30px",
+                                    width: "100%", maxHeight: "400px", borderRadius: "30px 30px 0 30px",
                                     boxShadow: "0 30px 60px -20px rgba(14, 165, 233, 0.25)",
-                                    zIndex: 1, position: "relative"
+                                    zIndex: 1, position: "relative",
+                                    objectFit: "contain"
                                 }}
                             />
                             {/* Floating Glass Card */}
@@ -134,14 +141,14 @@ export default function Thermostat() {
                         {/* Image Side */}
                         <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
                             <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
-                                <img
+                                <OptimizedImage
                                     src={thermostast}
                                     alt="Professional Smart Thermostat"
                                     style={{
                                         width: "100%",
                                         height: "100%",
-                                        objectFit: "contain",
-                                        display: "block"
+                                        display: "block",
+                                        objectFit: "contain"
                                     }}
                                 />
                                 <div style={{
@@ -162,7 +169,7 @@ export default function Thermostat() {
                             <div style={{ padding: "40px 60px", background: "#fff", borderTop: "1px solid #f1f5f9", display: "flex", flexDirection: "column", gap: 20 }}>
                                 <div>
                                     <span style={{ fontSize: 13, textTransform: "uppercase", letterSpacing: 1.5, fontWeight: 700, color: "#94a3b8" }}>Featured Device</span>
-                                    <h3 style={{ fontSize: 24, fontWeight: 800, color: "#ff7216", margin: "8px 0 0" }}>Nest Learning Gen 3</h3>
+                                    <h3 style={{ fontSize: 24, fontWeight: 800, color: "#ff7216", margin: "8px 0 0" }}>Ecobee Smart Thermostat</h3>
                                 </div>
                                 <div style={{
                                     display: "inline-flex", alignItems: "center", gap: 12, padding: "12px 24px",

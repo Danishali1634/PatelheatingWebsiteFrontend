@@ -1,13 +1,19 @@
 import React from "react";
 import { Droplets, Sun, Scale, ShieldCheck, ArrowRight, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import ervimage from "../assets/ervimage.jpg";
+import OptimizedImage from "./OptimizedImage";
 
 
 export default function Erv() {
     return (
         <>
-            <title>ERV Systems - Patel Heating & Air Conditioning</title>
+            <Helmet>
+                <title>ERV System Installation Brampton | Balanced Moisture Control</title>
+                <meta name="description" content="Discover the benefits of Energy Recovery Ventilation (ERV). Balance indoor humidity and fresh air for ultimate comfort. Professional ERV installation in Brampton." />
+                <meta name="keywords" content="ERV system Brampton, energy recovery ventilation, humidity control HVAC, fresh air ventilation, Patel Heating ERV" />
+            </Helmet>
             <div style={{ fontFamily: "Inter, sans-serif", color: "#0d0d0d" }}>
 
                 {/* Custom Hero: Split Tone */}
@@ -60,13 +66,14 @@ export default function Erv() {
                         </div>
 
                         <div className="erv-hero-img" style={{ position: "relative" }}>
-                            <img
+                            <OptimizedImage
                                 src={ervimage}
                                 alt="Modern ERV System"
                                 style={{
-                                    width: "100%", maxHeight: "400px", objectFit: "contain", borderRadius: "30px 30px 0 30px",
+                                    width: "100%", maxHeight: "400px", borderRadius: "30px 30px 0 30px",
                                     boxShadow: "0 30px 60px -20px rgba(2, 132, 199, 0.25)",
-                                    zIndex: 1, position: "relative"
+                                    zIndex: 1, position: "relative",
+                                    objectFit: "contain"
                                 }}
                             />
                             {/* Floating Glass Card */}
@@ -135,14 +142,14 @@ export default function Erv() {
                         {/* Image Side */}
                         <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
                             <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
-                                <img
+                                <OptimizedImage
                                     src={ervimage}
                                     alt="Professional ERV System"
                                     style={{
                                         width: "100%",
                                         height: "100%",
-                                        objectFit: "contain",
-                                        display: "block"
+                                        display: "block",
+                                        objectFit: "contain"
                                     }}
                                 />
                                 <div style={{
@@ -163,7 +170,7 @@ export default function Erv() {
                             <div style={{ padding: "40px 60px", background: "#fff", borderTop: "1px solid #f1f5f9", display: "flex", flexDirection: "column", gap: 20 }}>
                                 <div>
                                     <span style={{ fontSize: 13, textTransform: "uppercase", letterSpacing: 1.5, fontWeight: 700, color: "#94a3b8" }}>Featured Model</span>
-                                    <h3 style={{ fontSize: 24, fontWeight: 800, color: "#ff7216", margin: "8px 0 0" }}>Venmar Advanced Series</h3>
+                                    <h3 style={{ fontSize: 24, fontWeight: 800, color: "#ff7216", margin: "8px 0 0" }}>VanEE Advanced Series</h3>
                                 </div>
                                 <div style={{
                                     display: "inline-flex", alignItems: "center", gap: 12, padding: "12px 24px",

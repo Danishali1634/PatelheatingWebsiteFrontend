@@ -1,13 +1,19 @@
 import React from "react";
 import { Zap, Sun, Snowflake, CheckCircle, ArrowRight, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import heatpump from '../assets/heatpump.png'
+import OptimizedImage from "./OptimizedImage";
 
 
 export default function HeatPump() {
     return (
         <>
-            <title>Heat Pump Services - Patel Heating & Air Conditioning</title>
+            <Helmet>
+                <title>Energy-Efficient Heat Pump Installation Brampton | Patel Heating</title>
+                <meta name="description" content="Upgrade to an energy-efficient heat pump for year-round heating and cooling comfort. Specialized in hybrid systems and eco-friendly HVAC solutions in Brampton & GTA." />
+                <meta name="keywords" content="heat pump installation Brampton, hybrid heating systems, energy-efficient HVAC, Patel Heating heat pumps" />
+            </Helmet>
             <div style={{ fontFamily: "Inter, sans-serif", color: "#0d0d0d" }}>
 
                 {/* Custom Hero: Split/Gradient */}
@@ -83,13 +89,14 @@ export default function HeatPump() {
                         </div>
 
                         <div className="heatpump-hero-img" style={{ position: "relative" }}>
-                            <img
+                            <OptimizedImage
                                 src={heatpump}
                                 alt="Modern Heat Pump System"
                                 style={{
-                                    width: "100%", maxHeight: "400px", objectFit: "contain", borderRadius: "30px 30px 0 30px",
+                                    width: "100%", maxHeight: "400px", borderRadius: "30px 30px 0 30px",
                                     boxShadow: "0 30px 60px -20px rgba(251, 146, 60, 0.25)",
-                                    zIndex: 1, position: "relative"
+                                    zIndex: 1, position: "relative",
+                                    objectFit: "contain"
                                 }}
                             />
                             {/* Floating Glass Card */}
@@ -158,14 +165,14 @@ export default function HeatPump() {
                         {/* Image Side */}
                         <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
                             <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
-                                <img
+                                <OptimizedImage
                                     src={heatpump}
                                     alt="Modern Heat Pump"
                                     style={{
                                         width: "100%",
                                         height: "100%",
-                                        objectFit: "contain",
-                                        display: "block"
+                                        display: "block",
+                                        objectFit: "contain"
                                     }}
                                 />
                                 <div style={{

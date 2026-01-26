@@ -1,13 +1,19 @@
 import React from "react";
 import { Snowflake, Wind, Droplets, ArrowRight, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import cooling from '../assets/cooling.jpg'
+import OptimizedImage from "./OptimizedImage";
 
 
 export default function Cooling() {
     return (
         <>
-            <title>Air Conditioning Services - Patel Heating & Air Conditioning</title>
+            <Helmet>
+                <title>AC Repair & Installation Brampton | Air Conditioning Services</title>
+                <meta name="description" content="Professional air conditioning repair, installation, and maintenance in Brampton. Keep your home cool and comfortable with our expert HVAC services." />
+                <meta name="keywords" content="AC repair Brampton, air conditioning installation, AC maintenance GTA, Patel Heating cooling" />
+            </Helmet>
             <div style={{ fontFamily: "Inter, sans-serif", color: "#0d0d0d" }}>
 
                 {/* Custom Hero: Fresh & Pure Air */}
@@ -61,13 +67,14 @@ export default function Cooling() {
                         </div>
 
                         <div className="cooling-hero-img" style={{ position: "relative" }}>
-                            <img
+                            <OptimizedImage
                                 src={cooling}
                                 alt="Refreshing Cool Interior"
                                 style={{
-                                    width: "100%", maxHeight: "400px", objectFit: "contain", borderRadius: "30px 30px 0 30px",
+                                    width: "100%", maxHeight: "400px", borderRadius: "30px 30px 0 30px",
                                     boxShadow: "0 30px 60px -20px rgba(14, 165, 233, 0.25)",
-                                    zIndex: 1, position: "relative"
+                                    zIndex: 1, position: "relative",
+                                    objectFit: "contain"
                                 }}
                             />
                             {/* Floating Glass Card */}
@@ -136,14 +143,14 @@ export default function Cooling() {
                         {/* Image Side */}
                         <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
                             <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
-                                <img
+                                <OptimizedImage
                                     src={cooling}
                                     alt="Professional Air Conditioner"
                                     style={{
                                         width: "100%",
                                         height: "100%",
-                                        objectFit: "contain",
-                                        display: "block"
+                                        display: "block",
+                                        objectFit: "contain"
                                     }}
                                 />
                                 <div style={{
