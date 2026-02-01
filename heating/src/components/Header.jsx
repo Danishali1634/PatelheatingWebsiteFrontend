@@ -3,7 +3,7 @@ import { NavLink, Link, useLocation } from 'react-router-dom';
 import { FaFacebookF, FaInstagram, FaPhoneAlt, FaMapMarkerAlt, FaBars, FaTimes, FaChevronDown, FaMoon, FaSun } from 'react-icons/fa';
 import './Header.css';
 // import brandLogo from '../../assets/brandLogo.png';
-import brandLogo from '../assets/brandLogo.png'
+const brandLogo = 'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538466/brandLogo_wkpkuy.png';
 import { AiOutlineCloseCircle } from "react-icons/ai"
 
 const Header = () => {
@@ -49,7 +49,7 @@ const Header = () => {
                             </div>
                             <div className="contact-item">
                                 <FaMapMarkerAlt className="icon-white" />
-                                <span style={{ fontSize: 20, fontWeight: 800 }}>info@patelheating.com</span>
+                                <span style={{ fontSize: 20, fontWeight: 800 }}>patelheating@gmail.com</span>
                             </div>
                         </div>
                     </div>

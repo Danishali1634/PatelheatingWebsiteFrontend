@@ -2,8 +2,7 @@ import React from "react";
 import { Droplets, Sun, Scale, ShieldCheck, ArrowRight, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import ervimage from "../assets/ervimage.jpg";
-import OptimizedImage from "./OptimizedImage";
+
 
 
 export default function Erv() {
@@ -66,8 +65,8 @@ export default function Erv() {
                         </div>
 
                         <div className="erv-hero-img" style={{ position: "relative" }}>
-                            <OptimizedImage
-                                src={ervimage}
+                            <img
+                                src='https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538465/ervimage_daiwl0.jpg'
                                 alt="Modern ERV System"
                                 style={{
                                     width: "100%", maxHeight: "400px", borderRadius: "30px 30px 0 30px",
@@ -142,8 +141,8 @@ export default function Erv() {
                         {/* Image Side */}
                         <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
                             <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
-                                <OptimizedImage
-                                    src={ervimage}
+                                <img
+                                    src='https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538465/ervimage_daiwl0.jpg'
                                     alt="Professional ERV System"
                                     style={{
                                         width: "100%",

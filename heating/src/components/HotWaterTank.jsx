@@ -2,8 +2,7 @@ import React from "react";
 import { Flame, Clock, RefreshCw, ArrowRight, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import watertank from '../assets/watertank.png'
-import OptimizedImage from "./OptimizedImage";
+
 
 
 export default function HotWaterTank() {
@@ -66,8 +65,8 @@ export default function HotWaterTank() {
                         </div>
 
                         <div className="watertank-hero-img" style={{ position: "relative" }}>
-                            <OptimizedImage
-                                src={watertank}
+                            <img
+                                src='https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538466/watertank_if96eb.png'
                                 alt="Modern Hot Water Tank"
                                 style={{
                                     width: "100%", maxHeight: "400px", borderRadius: "30px 30px 0 30px",
@@ -142,8 +141,8 @@ export default function HotWaterTank() {
                         {/* Image Side */}
                         <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
                             <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
-                                <OptimizedImage
-                                    src={watertank}
+                                <img
+                                    src='https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538466/watertank_if96eb.png'
                                     alt="Professional Hot Water Tank"
                                     style={{
                                         width: "100%",

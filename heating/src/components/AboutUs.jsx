@@ -1,6 +1,6 @@
 import React from "react";
 import { Award, Users, Heart, Shield, Clock, ThumbsUp, Zap, Target, CheckCircle, Phone, MapPin, Facebook, Instagram } from "lucide-react";
-import brandLogo from "../assets/brandLogo.png";
+const brandLogo = "https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538466/brandLogo_wkpkuy.png";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 

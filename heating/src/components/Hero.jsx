@@ -1,15 +1,12 @@
 
-import WorkDuring from '../assets/workDuring.mp4'
-import heroNew from '../assets/heroSectionNew.webp'
-import heroMobile from '../assets/herotwo.jpg'
 import React from 'react';
 import { Phone } from 'lucide-react';
 
 const PremiumHero = () => {
     const slide = {
         title: 'Bringing Comfort to Your Home',
-        image: heroNew,
-        mobileImage: heroMobile
+        image: 'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538468/herothree_gkuioa.jpg',
+        mobileImage: 'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538469/herotwo_jxfots.jpg'
     };
 
     return (
@@ -73,8 +70,8 @@ const PremiumHero = () => {
                                 loop
                                 muted
                                 preload="none"
-                                poster={heroNew}
-                                src={WorkDuring}
+                                // poster={heroNew}
+                                src='https://res.cloudinary.com/dtjcelk8d/video/upload/v1769538469/workDuring_cnv900.mp4'
                                 title="PATEL Heating & Air Conditioning"
                             />
                         </div>

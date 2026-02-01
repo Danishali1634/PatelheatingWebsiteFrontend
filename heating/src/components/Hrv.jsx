@@ -2,8 +2,7 @@ import React from "react";
 import { Wind, ArrowLeftRight, Leaf, ShieldCheck, ArrowRight, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import hrvimage from "../assets/hrvimage.png";
-import OptimizedImage from "./OptimizedImage";
+
 
 
 
@@ -67,8 +66,8 @@ export default function Hrv() {
                         </div>
 
                         <div className="hrv-hero-img" style={{ position: "relative" }}>
-                            <OptimizedImage
-                                src={hrvimage}
+                            <img
+                                src='https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538469/hrvimage_spm0nf.png'
                                 alt="Modern HRV System"
                                 style={{
                                     width: "100%", maxHeight: "400px", borderRadius: "30px 30px 0 30px",
@@ -143,8 +142,8 @@ export default function Hrv() {
                         {/* Image Side */}
                         <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
                             <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
-                                <OptimizedImage
-                                    src={hrvimage}
+                                <img
+                                    src='https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538469/hrvimage_spm0nf.png'
                                     alt="Professional HRV System"
                                     style={{
                                         width: "100%",

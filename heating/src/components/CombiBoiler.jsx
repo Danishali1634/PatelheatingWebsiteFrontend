@@ -2,11 +2,8 @@ import React from "react";
 import { CheckCircle, Zap, ShieldCheck, ArrowRight, Calendar, Droplets } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-// import combi1 from '../assets/WhatsApp Image 2026-01-18 at 19.13.31.jpeg';
-// import combi2 from '../assets/WhatsApp Image 2026-01-18 at 19.13.30.jpeg';
-import OptimizedImage from "./OptimizedImage";
-import newCombie from '../assets/newCombie.png'
-// /Users/danishakhtar/Desktop/live-web/heating/src/assets/newCombie.png
+
+
 
 export default function CombiBoiler() {
     return (
@@ -86,8 +83,8 @@ export default function CombiBoiler() {
                     </div>
 
                     <div className="combi-hero-img" style={{ position: "relative" }}>
-                        <OptimizedImage
-                            src={newCombie}
+                        <img
+                            src='https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538470/newCombie_dxoii3.png'
                             alt="Combie Boiler System unit"
                             style={{
                                 width: "100%", maxHeight: "500px", borderRadius: "24px",
@@ -159,8 +156,8 @@ export default function CombiBoiler() {
                     {/* Image Side */}
                     <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
                         <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
-                            <OptimizedImage
-                                src={newCombie}
+                            <img
+                                src='https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538470/newCombie_dxoii3.png'
                                 alt="Professional Combie Boiler Installation"
                                 style={{
                                     width: "100%",

@@ -27,8 +27,8 @@ export default function ContactPage() {
         {
             icon: <Mail size={28} />,
             title: "Email",
-            content: "info@patelheating.com",
-            link: "mailto:info@patelheating.com"
+            content: "patelheating@gmail.com",
+            link: "mailto:patelheating@gmail.com"
         },
         {
             icon: <MapPin size={28} />,
@@ -272,6 +272,7 @@ export default function ContactPage() {
                                     margin: 0
                                 }}>
                                     Send us a Message
+
                                 </h2>
                             </div>
 

@@ -1,21 +1,19 @@
 import React from 'react';
-import bosch from '../assets/brandsImg/Bosch-logo.svg.png';
-import bryant from '../assets/brandsImg/Bryant copy.png';
-import goodman from '../assets/brandsImg/Goodman_Global_logo.svg (1).png';
-import kepler from '../assets/brandsImg/Kepler logo.png';
-import lennox from '../assets/brandsImg/Lennox-Logo.png';
-import carrier from '../assets/brandsImg/Logo_of_the_Carrier_Corporation.svg.png';
-import midea from '../assets/brandsImg/Midea-Logo.png';
-import mitsubishi from '../assets/brandsImg/Mitsubishi_Electric_logo.png';
-import payne from '../assets/brandsImg/Payne_Heating__Cooling_Logo_old.png';
-import york from '../assets/brandsImg/York-Logo-Vector.svg-.png';
-import trane from '../assets/brandsImg/media_1bcd5a3e80504f24744720a77681111a6f8a8bf7f.png';
-import tempstar from '../assets/brandsImg/tc-horiz-red-logo.png';
 
 const Brands = () => {
     const brands = [
-        bosch, bryant, goodman, kepler, lennox, carrier,
-        midea, mitsubishi, payne, york, trane, tempstar
+        'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769539187/York-Logo-Vector.svg-_td8h7b.png',
+        'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769539185/tc-horiz-red-logo_zfuhs5.png',
+        'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769539184/Payne_Heating__Cooling_Logo_old_ehyzlu.png',
+        'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769539182/Mitsubishi_Electric_logo_h7hd3f.png',
+        'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769539181/Midea-Logo_jgybuo.png',
+        'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769539179/media_1bcd5a3e80504f24744720a77681111a6f8a8bf7f_yaisrt.png',
+        'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769539179/Logo_of_the_Carrier_Corporation.svg_w6rkd4.png',
+        'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769539177/Lennox-Logo_s4nk71.png',
+        'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769539176/Kepler_logo_aiqitt.png',
+        'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769539175/Goodman_Global_logo.svg_1_nyhsq3.png',
+        'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769539174/Bryant_copy_hfm4gy.png',
+        'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769539173/Bosch-logo.svg_c4vs9d.png'
     ];
 
     return (

@@ -2,8 +2,7 @@ import React from "react";
 import { Smartphone, PieChart, Wifi, ArrowRight, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import thermostast from '../assets/thermostast.png'
-import OptimizedImage from "./OptimizedImage";
+
 
 
 export default function Thermostat() {
@@ -65,8 +64,8 @@ export default function Thermostat() {
                         </div>
 
                         <div className="thermostat-hero-img" style={{ position: "relative" }}>
-                            <OptimizedImage
-                                src={thermostast}
+                            <img
+                                src='https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538465/thermostast_pjzluu.png'
                                 alt="Smart Thermostat Interface"
                                 style={{
                                     width: "100%", maxHeight: "400px", borderRadius: "30px 30px 0 30px",
@@ -141,8 +140,8 @@ export default function Thermostat() {
                         {/* Image Side */}
                         <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
                             <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
-                                <OptimizedImage
-                                    src={thermostast}
+                                <img
+                                    src='https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538465/thermostast_pjzluu.png'
                                     alt="Professional Smart Thermostat"
                                     style={{
                                         width: "100%",

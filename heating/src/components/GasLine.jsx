@@ -2,8 +2,7 @@ import React from "react";
 import { Flame, Clock, RefreshCw, ArrowRight, Calendar, Shield, AlertTriangle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import gasline from '../assets/gasline.jpg'
-import OptimizedImage from "./OptimizedImage";
+
 
 
 export default function GasLine() {
@@ -63,8 +62,8 @@ export default function GasLine() {
                         </div>
 
                         <div className="gasline-hero-img" style={{ position: "relative" }}>
-                            <OptimizedImage
-                                src={gasline}
+                            <img
+                                src='https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538467/gasline_edcghj.png'
                                 alt="Gas Line Professional Installation"
                                 style={{
                                     width: "100%", maxHeight: "400px", borderRadius: "30px 30px 0 30px",
@@ -139,8 +138,8 @@ export default function GasLine() {
                         {/* Image Side */}
                         <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
                             <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
-                                <OptimizedImage
-                                    src={gasline}
+                                <img
+                                    src='https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538467/gasline_edcghj.png'
                                     alt="Gas Line Installation"
                                     style={{
                                         width: "100%",

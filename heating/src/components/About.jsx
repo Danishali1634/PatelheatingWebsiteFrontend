@@ -1,6 +1,5 @@
 import React from 'react';
 import './About.css';
-import hvacServiceman from '../assets/hvacServiceman.jpg'
 
 const About = () => (
     <section className="section-padding about-section">
@@ -26,7 +25,7 @@ const About = () => (
                 </div>
                 <div className="col-image about-image-wrapper">
                     <img
-                        src={hvacServiceman}
+                        src='https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538470/hvacServiceman_hktn2w.jpg'
                         alt="HVAC Technician"
                         loading="lazy"
                         className="about-image" />

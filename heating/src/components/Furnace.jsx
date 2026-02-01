@@ -2,9 +2,6 @@ import React from "react";
 import { Flame, ShieldCheck, Zap, Thermometer, ArrowRight, Phone, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import furanceimg from '../assets/furanceimg.png'
-import OptimizedImage from "./OptimizedImage";
-
 
 export default function Furnace() {
     return (
@@ -66,8 +63,8 @@ export default function Furnace() {
                         </div>
 
                         <div className="furnace-hero-img" style={{ position: "relative" }}>
-                            <OptimizedImage
-                                src={furanceimg}
+                            <img
+                                src={'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538467/furanceimg_asbrz0.png'}
                                 alt="Modern Furnace Unit"
                                 style={{
                                     width: "100%", maxHeight: "500px", borderRadius: "30px",
@@ -142,8 +139,8 @@ export default function Furnace() {
                         {/* Image Side */}
                         <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
                             <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
-                                <OptimizedImage
-                                    src={furanceimg}
+                                <img
+                                    src={'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538467/furanceimg_asbrz0.png'}
                                     alt="Reliable Heating System"
                                     style={{
                                         width: "100%",

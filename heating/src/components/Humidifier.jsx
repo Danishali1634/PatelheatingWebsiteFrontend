@@ -2,8 +2,7 @@ import React from "react";
 import { Droplets, Shield, Smile, ArrowRight, Clock, RefreshCw, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import humidifier from '../assets/humidifier.png'
-import OptimizedImage from "./OptimizedImage";
+
 
 
 export default function Humidifier() {
@@ -66,8 +65,8 @@ export default function Humidifier() {
                         </div>
 
                         <div className="humidifier-hero-img" style={{ position: "relative" }}>
-                            <OptimizedImage
-                                src={humidifier}
+                            <img
+                                src='https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538470/humidifier_p1zyhm.png'
                                 alt="Modern Humidifier"
                                 style={{
                                     width: "100%", maxHeight: "400px", borderRadius: "30px 30px 0 30px",
@@ -142,8 +141,8 @@ export default function Humidifier() {
                         {/* Image Side */}
                         <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
                             <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
-                                <OptimizedImage
-                                    src={humidifier}
+                                <img
+                                    src='https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538470/humidifier_p1zyhm.png'
                                     alt="Professional Humidifier"
                                     style={{
                                         width: "100%",

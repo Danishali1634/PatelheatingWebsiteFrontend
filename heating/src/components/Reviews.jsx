@@ -2,22 +2,19 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
-// Import review images
-import rone from '../assets/reviews/rone.png';
-import rtwo from '../assets/reviews/rtwo.png';
-import rthree from '../assets/reviews/rthree.png';
-import rfour from '../assets/reviews/rfour.png';
-import rfive from '../assets/reviews/rfive.png';
-import rseven from '../assets/reviews/rseven.png';
-import reight from '../assets/reviews/reight.png';
-import rnine from '../assets/reviews/rnine.png';
-import rten from '../assets/reviews/rten.png';
-import releven from '../assets/reviews/releven.png';
 
 const reviewImages = [
-    rone, rtwo, rthree, rfour, rfive, rseven, reight, rnine, rten, releven
-];
-
+    'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769539347/reight_xdhcmb.png',
+    'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769539345/releven_raufxx.png',
+    'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769539344/rfive_fuxmnf.png',
+    'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769539342/rfour_xtfivy.png',
+    'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769539340/rnine_j1v1jv.png',
+    'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769539338/rone_qgbhvc.png',
+    'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769539337/rseven_diyemq.png',
+    'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769539335/rten_ecwfo2.png',
+    'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769539334/rthree_j5yjb1.png',
+    'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769539332/rtwo_inbwym.png',
+]
 export default function Reviews() {
     const [selectedImage, setSelectedImage] = useState(null);
 

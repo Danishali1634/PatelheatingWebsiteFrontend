@@ -2,9 +2,7 @@ import React from "react";
 import { Droplets, TrendingDown, Clock, ArrowRight, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-// import tankless from '../assets/tankless.png'
-import tankless from '../assets/tenkless.png'
-import OptimizedImage from "./OptimizedImage";
+
 
 
 export default function TanklessWaterHeater() {
@@ -66,8 +64,8 @@ export default function TanklessWaterHeater() {
                         </div>
 
                         <div className="tankless-hero-img" style={{ position: "relative" }}>
-                            <OptimizedImage
-                                src={tankless}
+                            <img
+                                src=' https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538470/tenkless_uon8x3.png'
                                 alt="Modern Tankless Water Heater"
                                 style={{
                                     width: "100%", maxHeight: "500px", borderRadius: "30px",
@@ -142,8 +140,8 @@ export default function TanklessWaterHeater() {
                         {/* Image Side */}
                         <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
                             <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
-                                <OptimizedImage
-                                    src={tankless}
+                                <img
+                                    src=' https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538470/tenkless_uon8x3.png'
                                     alt="Professional Tankless System"
                                     style={{
                                         width: "100%",

@@ -2,8 +2,7 @@ import React from "react";
 import { Snowflake, Wind, Droplets, ArrowRight, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import cooling from '../assets/cooling.jpg'
-import OptimizedImage from "./OptimizedImage";
+
 
 
 export default function Cooling() {
@@ -67,8 +66,9 @@ export default function Cooling() {
                         </div>
 
                         <div className="cooling-hero-img" style={{ position: "relative" }}>
-                            <OptimizedImage
-                                src={cooling}
+                            {/* <img */}
+                            <img
+                                src={'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538465/cooling_otevst.jpg'}
                                 alt="Refreshing Cool Interior"
                                 style={{
                                     width: "100%", maxHeight: "400px", borderRadius: "30px 30px 0 30px",
@@ -143,8 +143,8 @@ export default function Cooling() {
                         {/* Image Side */}
                         <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
                             <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
-                                <OptimizedImage
-                                    src={cooling}
+                                <img
+                                    src={'https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538465/cooling_otevst.jpg'}
                                     alt="Professional Air Conditioner"
                                     style={{
                                         width: "100%",

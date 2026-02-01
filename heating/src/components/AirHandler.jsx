@@ -2,8 +2,7 @@ import React from "react";
 import { Wind, Activity, CheckCircle, ArrowRight, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import airhandler from '../assets/airhandler.png'
-import OptimizedImage from "./OptimizedImage";
+
 
 
 export default function AirHandler() {
@@ -66,8 +65,8 @@ export default function AirHandler() {
                         </div>
 
                         <div className="airhandler-hero-img" style={{ position: "relative" }}>
-                            <OptimizedImage
-                                src={airhandler}
+                            <img
+                                src='https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538465/airhandler_b3u4qv.jpg'
                                 alt="Modern Air Handler Unit"
                                 style={{
                                     width: "100%", maxHeight: "400px", borderRadius: "30px 30px 0 30px",
@@ -142,8 +141,8 @@ export default function AirHandler() {
                         {/* Image Side */}
                         <div style={{ display: "flex", flexDirection: "column", borderLeft: "1px solid #f1f5f9" }}>
                             <div style={{ flex: 1, position: "relative", minHeight: "50vh", maxHeight: "50vh", overflow: "hidden", background: "#f8fafc" }}>
-                                <OptimizedImage
-                                    src={airhandler}
+                                <img
+                                    src='https://res.cloudinary.com/dtjcelk8d/image/upload/v1769538465/airhandler_b3u4qv.jpg'
                                     alt="Professional Air Handler"
                                     style={{
                                         width: "100%",
